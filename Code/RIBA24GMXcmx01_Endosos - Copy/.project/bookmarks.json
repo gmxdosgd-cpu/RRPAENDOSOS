@@ -1,0 +1,44 @@
+{
+  "Value": {
+    "Main.xaml": [
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "5670fb71-16fe-4f01-a954-83f2dc1260d0",
+        "ActivityIdRef": "SendMail_1",
+        "ActivityId": null,
+        "ActivityName": "Send SMTP Mail Message",
+        "IsTransient": false
+      }
+    ],
+    "1) Procesamiento de Correos de Solicitud/1.1) ProcesamientoDeCorreosDeSolicitud.xaml": [
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "d0c5e631-c82d-409a-9a38-04a04940ec1b",
+        "ActivityIdRef": "Assign_85",
+        "ActivityId": "1.13835",
+        "ActivityName": "FechaHoyDDMMYYYY_str",
+        "IsTransient": false
+      },
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "2dc8430d-40fd-409c-9373-b04d26dcc4ec",
+        "ActivityIdRef": "Sequence_979",
+        "ActivityId": "1.2899",
+        "ActivityName": "Excel_ArchivoCorreo",
+        "IsTransient": false
+      },
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "7d8ce73e-58c3-43b6-8be2-d9341fd9718e",
+        "ActivityIdRef": "Sequence_1482",
+        "ActivityId": "1.162",
+        "ActivityName": "CurrentRowSolicitud",
+        "IsTransient": false
+      }
+    ]
+  }
+}

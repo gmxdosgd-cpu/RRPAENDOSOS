@@ -1,0 +1,197 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ActualizarPanelEndosos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="i_pasoActual_Str" Type="InArgument(x:String)" />
+    <x:Property Name="i_finalizarProceso_Str" Type="InArgument(x:String)" />
+    <x:Property Name="i_mensajeError_Str" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>790,1040</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActualizarPanelEndosos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="24">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Actualizar panel web de Endosos" sap:VirtualizedContainerService.HintSize="636,1000" sap2010:WorkflowViewState.IdRef="Sequence_PanelEndosos_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="RutaJson_Str" />
+      <Variable x:TypeArguments="x:String" Name="NombreSprint_Str" />
+      <Variable x:TypeArguments="x:String" Name="FinalizarProceso_Str" />
+      <Variable x:TypeArguments="x:String" Name="PasosTexto_Str" />
+      <Variable x:TypeArguments="x:String" Name="DescripcionesTexto_Str" />
+      <Variable x:TypeArguments="x:String" Name="MensajeError_Str" />
+      <Variable x:TypeArguments="x:String" Name="PublicarCloudflare_Str" />
+      <Variable x:TypeArguments="x:String" Name="CloudflareUrlBase_Str" />
+      <Variable x:TypeArguments="x:String" Name="CloudflareApiToken_Str" />
+      <Variable x:TypeArguments="x:Int32" Name="IndiceItemPanel_Int" />
+      <Variable x:TypeArguments="x:Int32" Name="TotalItemsPanel_Int" />
+      <Variable x:TypeArguments="x:String" Name="IdentificadorItemPanel_Str" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Configurar ruta JSON" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[RutaJson_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("RutaJasonRIBA24GMXcmx01_Endosos"), in_Config("RutaJasonRIBA24GMXcmx01_Endosos").ToString, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar nombre del proceso" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[NombreSprint_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">RIBA24GMXcmx01_Endosos</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar cierre" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[FinalizarProceso_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(i_finalizarProceso_Str, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar pasos" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PasosTexto_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Inicializar configuracion del robot||Preparar solicitudes del dia||Leer y organizar solicitudes||Extraer datos del correo||Extraer datos del certificado PDF||Calcular cuota de riesgo hidro||Obtener cuota por catalogo||Registrar cuotas hidrologicas||Actualizar mapeo y hoja contable||Preparar solicitudes para registro en SII||Iniciar sesion y registro de endoso en SII||Consultar poliza base en SII||Capturar informacion del endoso||Grabar endoso y recuperar nueva poliza||Preparar documentos para GEDI||Iniciar expediente digital GEDI||Seleccionar y cargar documentos en GEDI||Generar y finalizar expediente digital||Actualizar y enviar reporte final||Finalizar proceso de Endosos</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar descripciones" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DescripcionesTexto_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Lee Config.xlsx y deja listas las variables del panel.||Prepara el archivo de control y las plantillas base del proceso.||Obtiene los archivos multipoliza y organiza las carpetas de trabajo.||Obtiene folio, suscriptor, tipo de solicitud y poliza anterior.||Lee datos generales, vigencias, primas y especificaciones.||Calcula la cuota hidrologica cuando no existe un valor de catalogo.||Consulta el catalogo de cuotas para la cobertura correspondiente.||Registra las cuotas hidrologicas obtenidas para la solicitud.||Escribe los datos normalizados en el mapeo y los controles del caso.||Lee las solicitudes listas y prepara la informacion que se capturara en SII.||Accede a SII e inicia el registro del endoso correspondiente.||Busca la poliza anterior y valida la informacion de referencia.||Captura datos generales, riesgos y especificaciones del movimiento.||Confirma el movimiento y recupera poliza, sufijo y numero de endoso.||Consolida el resultado de emision y deja listos los documentos del caso.||Lee las polizas emitidas y abre el flujo de expediente digital.||Selecciona condiciones y adjunta los documentos requeridos.||Genera el expediente, confirma el resultado y actualiza la solicitud.||Actualiza estatus, envia el correo de cierre y organiza los mensajes.||Publica en el panel el cierre correcto o el error final del proceso.</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Leer indice dinamico de Poliza" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[IndiceItemPanel_Int]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("PanelItemIndice"), CInt(in_Config("PanelItemIndice")), 0)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Leer total dinamico de Poliza" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[TotalItemsPanel_Int]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("PanelItemTotal"), CInt(in_Config("PanelItemTotal")), 0)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Leer identificador dinamico de Poliza" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[IdentificadorItemPanel_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("PanelItemIdentificador"), in_Config("PanelItemIdentificador").ToString, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Agregar contexto dinamico a pasos de Poliza" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PasosTexto_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(IndiceItemPanel_Int &gt; 0 AndAlso TotalItemsPanel_Int &gt; 0, String.Join("||", PasosTexto_Str.Split(New String() {"||"}, StringSplitOptions.None).Select(Function(texto, indice) If(((indice &gt;= 10 AndAlso indice &lt;= 13) OrElse (indice &gt;= 16 AndAlso indice &lt;= 17)), texto + " - Poliza " + IndiceItemPanel_Int.ToString + " de " + TotalItemsPanel_Int.ToString + If(String.IsNullOrWhiteSpace(IdentificadorItemPanel_Str), String.Empty, " (" + IdentificadorItemPanel_Str + ")"), texto))), PasosTexto_Str)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Agregar contexto dinamico a descripciones de Poliza" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[DescripcionesTexto_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(IndiceItemPanel_Int &gt; 0 AndAlso TotalItemsPanel_Int &gt; 0, String.Join("||", DescripcionesTexto_Str.Split(New String() {"||"}, StringSplitOptions.None).Select(Function(texto, indice) If(((indice &gt;= 10 AndAlso indice &lt;= 13) OrElse (indice &gt;= 16 AndAlso indice &lt;= 17)), "Poliza " + IndiceItemPanel_Int.ToString + " de " + TotalItemsPanel_Int.ToString + If(String.IsNullOrWhiteSpace(IdentificadorItemPanel_Str), String.Empty, " (" + IdentificadorItemPanel_Str + ")") + ": " + texto, texto))), DescripcionesTexto_Str)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar mensaje de error" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[MensajeError_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(i_mensajeError_Str, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar publicacion" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PublicarCloudflare_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("CloudflarePublicarPanelWeb"), in_Config("CloudflarePublicarPanelWeb").ToString, "False")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar URL de Cloudflare" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[CloudflareUrlBase_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("CloudflareBaseUrlPanelWeb"), in_Config("CloudflareBaseUrlPanelWeb").ToString, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Configurar token de Cloudflare" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[CloudflareApiToken_Str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(in_Config IsNot Nothing AndAlso in_Config.ContainsKey("CloudflareApiTokenPanelWeb"), in_Config("CloudflareApiTokenPanelWeb").ToString, String.Empty)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Ejecutar plantilla ActualizarPanelSprint" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelSprint.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_rutaJson_Str">[RutaJson_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_nombreSprint_Str">[NombreSprint_Str]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">[i_pasoActual_Str]</InArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_finalizarProceso_Str">[FinalizarProceso_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_pasosTexto_Str">[PasosTexto_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_descripcionesTexto_Str">[DescripcionesTexto_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_mensajeError_Str">[MensajeError_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_publicarCloudflare_Str">[PublicarCloudflare_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_cloudflareUrlBase_Str">[CloudflareUrlBase_Str]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_cloudflareApiToken_Str">[CloudflareApiToken_Str]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

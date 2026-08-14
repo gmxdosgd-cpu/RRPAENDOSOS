@@ -1,0 +1,6 @@
+{
+  "Name": "RIBA24GMXcmx01_Endosos",
+  "ProjectType": "Process",
+  "Description": "Robot para la Emisión de Endosos",
+  "MainFile": "Main.xaml"
+}

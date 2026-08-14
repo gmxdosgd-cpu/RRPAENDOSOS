@@ -1,0 +1,33 @@
+{
+  "Value": {
+    "2) Registro de Información en el Sii/2.1) RegistroDeInformacionEnElSii.xaml": [
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "e03b45c9-e2bd-4c4b-9a7e-d90d585ea97f",
+        "ActivityIdRef": "NApplicationCard_36",
+        "ActivityId": "1.3177",
+        "ActivityName": "Utilizar Aplicación: SIIGMX",
+        "IsTransient": false
+      },
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "cd5d475b-8594-4850-939a-d053a67ebeed",
+        "ActivityIdRef": "Assign_2037",
+        "ActivityId": "1.3058",
+        "ActivityName": "Asignar",
+        "IsTransient": false
+      },
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "25555b6f-ee43-48ab-a9ff-bf3c906530f3",
+        "ActivityIdRef": "Sequence_3946",
+        "ActivityId": "1.1557",
+        "ActivityName": "Conexion y Query a la Base de Datos",
+        "IsTransient": false
+      }
+    ]
+  }
+}

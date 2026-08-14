@@ -1,0 +1,439 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_1_4_1_1__ExtraerCuotasHidros" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="i_Cuotas_tbl" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="io_MessageSeq_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_CurrentRowData" Type="InOutArgument(sd:DataRow)" />
+    <x:Property Name="i_SeccionCuotas_str" Type="InArgument(x:String)" />
+    <x:Property Name="i_CoberturaCuotas_str" Type="InArgument(x:String)" />
+    <x:Property Name="i_ZonaCatastroficaGbl_str" Type="InArgument(x:String)" />
+    <x:Property Name="io_LineaDeTexto_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="i_CoutaRiesgoHidro_dbl" Type="InArgument(x:Double)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1208,2680.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="1.4.1.1) ExtraerCuotasHidros" DisplayName="1.4.1.1) ExtraerCuotasHidros" sap:VirtualizedContainerService.HintSize="890.4,2616" sap2010:WorkflowViewState.IdRef="Sequence_366">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SeccionCuotas_str" />
+      <Variable x:TypeArguments="x:String" Name="CoberturaCuotas_str" />
+      <Variable x:TypeArguments="sd:DataTable" Name="CuotaEncontrada_tbl" />
+      <Variable x:TypeArguments="x:String" Name="ColumnaCoutas_str" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="848.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_376">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="SeccionCuotas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_808">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[i_SeccionCuotas_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Edificio</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="848.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_377">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="CoberturaCuotas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_809">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[i_CoberturaCuotas_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Hidro</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Assign DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="848.8,60" sap2010:WorkflowViewState.IdRef="Assign_845">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <Switch x:TypeArguments="x:String" DisplayName="Cambiar" Expression="[i_ZonaCatastroficaGbl_str.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="848.8,233.6" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign x:Key="BB" DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_846">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">BB (BAHIA DE BANDERAS)</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="PSUR" DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_847">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">PSUR (PACIFICO SUR)</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="BSUR" DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_848">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">BSUR (BAJA SUR)</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="PYG" DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_849">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">PYG (PENINSULA DE YUCATAN Y GOLFO DE MEXICO)</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="RMEX" DisplayName="ColumnaCoutas_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_850">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[ColumnaCoutas_str]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">RMEX (RESTO DE MEXICO)</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Switch>
+    <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="848.8,1932.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="812,1701.6" sap2010:WorkflowViewState.IdRef="Sequence_368">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="CuotaEncontrada_tbl" sap:VirtualizedContainerService.HintSize="770.4,60" sap2010:WorkflowViewState.IdRef="Assign_810">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[CuotaEncontrada_tbl]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[i_Cuotas_tbl.Select("Sección = '"+SeccionCuotas_str+"' and Cobertura='"+CoberturaCuotas_str+"'").CopyToDataTable]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="LineaDeTexto_str" sap:VirtualizedContainerService.HintSize="770.4,60" sap2010:WorkflowViewState.IdRef="Assign_811">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[io_LineaDeTexto_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[CuotaEncontrada_tbl(0)(ColumnaCoutas_str).toString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap2010:Annotation.AnnotationText="Remover esta actividad cuando se defina lo del catálogo de cuotas" DisplayName="LineaDeTexto_str DUPLICADA" sap:VirtualizedContainerService.HintSize="770.4,104" sap2010:WorkflowViewState.IdRef="Assign_853">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[io_LineaDeTexto_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[i_CoutaRiesgoHidro_dbl.ToString]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="770.4,1264.8" sap2010:WorkflowViewState.IdRef="Sequence_375">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="NumberCadena_str" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="NumberCadena_str" sap:VirtualizedContainerService.HintSize="728.8,60" sap2010:WorkflowViewState.IdRef="Assign_817">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[NumberCadena_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[io_LineaDeTexto_str]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[NumberCadena_str.Contains(&quot;.&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="728.8,972" sap2010:WorkflowViewState.IdRef="If_78">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="380.8,812.8" sap2010:WorkflowViewState.IdRef="Sequence_373">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Int32" Name="PosDelPunto_int" />
+                    <Variable x:TypeArguments="x:Int32" Name="CantDeCeros_int" />
+                    <Variable x:TypeArguments="x:Int32" Name="CuentaCeros_int" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="PosDelPunto_int" sap:VirtualizedContainerService.HintSize="339.2,60" sap2010:WorkflowViewState.IdRef="Assign_818">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[PosDelPunto_int]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[NumberCadena_str.IndexOf(".")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="CantDeCeros_int" sap:VirtualizedContainerService.HintSize="339.2,60" sap2010:WorkflowViewState.IdRef="Assign_819">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[CantDeCeros_int]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[7-(NumberCadena_str.Length - PosDelPunto_int)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="CuentaCeros_int" sap:VirtualizedContainerService.HintSize="339.2,60" sap2010:WorkflowViewState.IdRef="Assign_820">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[CuentaCeros_int]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InterruptibleWhile Condition="[CuentaCeros_int&lt;CantDeCeros_int]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="339.2,420" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="304,252.8" sap2010:WorkflowViewState.IdRef="Sequence_372">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="NumberCadena_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_821">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[NumberCadena_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[NumberCadena_str+"0"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CuentaCeros_int" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_822">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[CuentaCeros_int]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[CuentaCeros_int + 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InterruptibleWhile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_374">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="NumberCadena_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_823">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[NumberCadena_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[NumberCadena_str+".000000"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign DisplayName="LineaDeTexto_str" sap:VirtualizedContainerService.HintSize="728.8,60" sap2010:WorkflowViewState.IdRef="Assign_824">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_LineaDeTexto_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[NumberCadena_str]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="815.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,452.8" sap2010:WorkflowViewState.IdRef="Sequence_369">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="HAY_ERROR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_812">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[io_CurrentRowData("HAY_ERROR")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">["ERROR"]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="ERROR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_813">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[io_CurrentRowData("ERROR")]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">["La Zona Catastrófica no se encuentra en el Catálogo de Cuotas. "]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="io_MessageSeq_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_814">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[io_MessageSeq_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[io_MessageSeq_str+io_CurrentRowData("ERROR").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="LineaDeTexto_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_815">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[io_LineaDeTexto_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[i_ZonaCatastroficaGbl_str]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

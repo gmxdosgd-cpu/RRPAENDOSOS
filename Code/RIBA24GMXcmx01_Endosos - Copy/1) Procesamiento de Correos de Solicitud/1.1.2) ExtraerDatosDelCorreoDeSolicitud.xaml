@@ -1,0 +1,1447 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_1_1_2__ExtraerDatosDelCorreoDeSolicitud" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_MessageSeq_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_HayError_bln" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="io_Folio_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_ClaveSuscriptor_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="i_Body_str" Type="InArgument(x:String)" />
+    <x:Property Name="io_HayErrorEnObtenerDatos_bln" Type="InArgument(x:Boolean)" />
+    <x:Property Name="io_NombreSuscriptor_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_TipoSolicitud_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_NumeroPolizaAnterior_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_Subject_str" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_UrlDelPdf_str" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>709.6,4921.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LeerConfiguracionDesdeExcel_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="68">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia obtiene datos del body del correo" DisplayName="1.1.2) ExtraerDatosDelCorreoDeSolicitud" sap:VirtualizedContainerService.HintSize="720,4856.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Configuracion" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ConsolidadoNCWM_dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="CatalogoUsuarioCategoria_dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="CatalogoRefPagoNegocio_dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="AcumuladoDeAportaciones_dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="BaseWalmext_dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="ResolutiónCockpit_dt" />
+      <Variable x:TypeArguments="x:String" Name="Secuencia_str" />
+      <Variable x:TypeArguments="x:String" Name="Mensaje_str" />
+      <Variable x:TypeArguments="x:String" Name="FechaHoyDDMMYYYY_str" />
+      <Variable x:TypeArguments="x:String" Name="CorreoTo_str" />
+      <Variable x:TypeArguments="x:String" Name="CorreoCc_str" />
+      <Variable x:TypeArguments="x:String" Name="ArchivoConfigXlsx_str" />
+      <Variable x:TypeArguments="x:String" Name="CorreoBcc_str" />
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="CorreosDeSolicitudes_lst" />
+      <Variable x:TypeArguments="x:String" Name="Actividad_str" />
+      <Variable x:TypeArguments="x:String" Name="Filtro_str" />
+      <Variable x:TypeArguments="x:Boolean" Name="HayErrorEnObtenerDatos_bln" />
+      <Variable x:TypeArguments="x:String" Name="TextoParaTrabajar_str" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="657.6,4713.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try Sequence" sap:VirtualizedContainerService.HintSize="620.8,4482.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="MessageSeq_str" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="MessageSeq_str" sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_51">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[MessageSeq_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="HayErrorEnObtenerDatos_bln" sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_54">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[HayErrorEnObtenerDatos_bln]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Secuencia_str Nombre de la Secuencia a ejecutar" sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Secuencia_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">1.1.2) ExtraerDatosDelCorreoDeSolicitud</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="558.4,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["___INI: "+Secuencia_str]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_129">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.1) Obtener Folio del correo."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="1.1.2.1) Obtener Folio del correo" sap:VirtualizedContainerService.HintSize="558.4,83.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+              <Variable x:TypeArguments="x:String" Name="Folio_str" />
+              <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+              <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+              <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionIni_int" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionFin_int" />
+              <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+              <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_68">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">1.1.2.1) Obtener Folio del correo.</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_80">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Número de Folio:</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_81">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_82">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_76">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_77">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.newLine]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_69">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_Folio_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(1,TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)).ToString.TrimStart.TrimEnd.Replace(Environment.newLine,"")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Validar si es Folio Numérico" sap:VirtualizedContainerService.HintSize="433.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="496,191.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Folio_int" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_70">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Folio_int]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[integer.Parse(io_Folio_str)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Sequence Exception exception" sap:VirtualizedContainerService.HintSize="496,491.2" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_71">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["ERROR: Actvidad="+Actividad_str+". No se pudo encontrar el Número de Folio en el cuerpo del correo mail."+ Secuencia_str+"."]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="MessageSeq_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_72">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MessageSeq_str]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[MessageSeq_str+"No se pudo encontrar el Número de Folio en el cuerpo del correo mail."]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_73">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[io_Folio_str]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="HayErrorEnObtenerDatos_bln" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_74">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[HayErrorEnObtenerDatos_bln]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_130">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.2) Obtener Nombre Suscriptor."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap2010:Annotation.AnnotationText="1.1.2.2) Obtener Nombre Suscriptor" DisplayName="1.1.2.2) Obtener Nombre Suscriptor" sap:VirtualizedContainerService.HintSize="558.4,954.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+              <Variable x:TypeArguments="x:String" Name="Folio_str" />
+              <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+              <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+              <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionIni_int" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionFin_int" />
+              <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+              <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_83">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["1.1.2.2) Obtener Nombre Suscriptor."]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_84">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["Suscriptor a cargo:"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_85">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_86">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_87">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_88">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.newLine]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="io_NombreSuscriptor_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_89">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_NombreSuscriptor_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(1,TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)).ToString.TrimStart.TrimEnd.Replace(Environment.newLine,"")]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="558.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="512,195.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="1.1.2.1) Obtener Folio del correo" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+                    <Variable x:TypeArguments="x:String" Name="Folio_str" />
+                    <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">1.1.2.1) Obtener Folio del correo.</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[io_Folio_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[i_Body_str.Substring(i_Body_str.IndexOf("Número de Folio")+"Número de Folio".Length).Split(Environment.NewLine.ToArray)(0).Replace(":","").Replace(" ","")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <TryCatch DisplayName="Validar si es Folio Numérico" sap:VirtualizedContainerService.HintSize="436.8,384" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Folio_int" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Folio_int]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[integer.Parse(io_Folio_str)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Sequence Exception exception" sap:VirtualizedContainerService.HintSize="304,484.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["ERROR: Actvidad="+Actividad_str+". No se pudo encontrar el Número de Folio en el cuerpo del correo mail."+ Secuencia_str+"."]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="MessageSeq_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[MessageSeq_str]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[MessageSeq_str+"No se pudo encontrar el Número de Folio en el cuerpo del correo mail."]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[io_Folio_str]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="HayErrorEnObtenerDatos_bln" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[HayErrorEnObtenerDatos_bln]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_131">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.3) Obtener Clave Suscriptor."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap2010:Annotation.AnnotationText="1.1.2.3) Obtener Clave Suscriptor" DisplayName="1.1.2.3) Obtener Clave Suscriptor" sap:VirtualizedContainerService.HintSize="558.4,114.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+              <Variable x:TypeArguments="x:String" Name="Folio_str" />
+              <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+              <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+              <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionIni_int" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionFin_int" />
+              <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+              <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_90">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["1.1.2.3) Obtener Clave Suscriptor."]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:CommentOut sap2010:Annotation.AnnotationText="SE COMEMTÓ PORQUE EL CÓDIGO DEL SUSCRIPTOR NO VENDRA EN EL MAIL. HAY QUE BORRAR ESTE CÓDIGO" DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="433.6,144.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Obtener Codigo Suscroip´tor del mail" sap:VirtualizedContainerService.HintSize="378.4,652.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_91">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["Código suscriptor:"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_92">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_93">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_94">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_95">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Environment.newLine]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="io_ClaveSuscriptor_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_96">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[io_ClaveSuscriptor_str]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(1,TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)).ToString.TrimStart.TrimEnd.Replace(Environment.newLine,"")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <Assign DisplayName="io_ClaveSuscriptor_str" sap:VirtualizedContainerService.HintSize="378.4,60" sap2010:WorkflowViewState.IdRef="Assign_119">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_ClaveSuscriptor_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 90.2) ObtenerCodigoDeSuscriptor workflow" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="90) CommonFlows\90.2) ObtenerCodigoDeSuscriptor.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[out_Config]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_HayError_bln">[io_HayError_bln]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="io_ClaveSuscriptor_str">[io_ClaveSuscriptor_str]</InOutArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="i_NombresSuscriptor_str">[io_NombreSuscriptor_str]</InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="558.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Actividades ignoradas" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                <Sequence DisplayName="1.1.2.2) Obtener Clave de Suscriptor" sap:VirtualizedContainerService.HintSize="376.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+                    <Variable x:TypeArguments="x:String" Name="Folio_str" />
+                    <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+                    <Variable x:TypeArguments="x:String" Name="NombreSuscriptor_str" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="513.6,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">1.1.2.2) Obtener Clave de Suscriptor.</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="NombreSuscriptor_str" sap:VirtualizedContainerService.HintSize="513.6,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[io_NombreSuscriptor_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[i_Body_str.Substring(i_Body_str.IndexOf("Suscriptor a cargo")+"Suscriptor a cargo".Length).Split(Environment.NewLine.ToArray)(0).Replace(":","").TrimStart.TrimEnd]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="ClaveSuscriptor_str" sap:VirtualizedContainerService.HintSize="513.6,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[io_ClaveSuscriptor_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[io_ClaveSuscriptor_str.Length=0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="513.6,341.6" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="MessageSeq_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[MessageSeq_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[MessageSeq_str+"No se pudo encontrar el Código del Suscriptor. Posíblemente el Nombre del Suscritor no está en el Correo o no se encuentra en el catálogo de Suscritores"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="513.6,595.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="478.4,476.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Validar si es Folio Numérico" sap:VirtualizedContainerService.HintSize="436.8,384" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Folio_int" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[Folio_int]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[integer.Parse(io_Folio_str)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Sequence Exception exception" sap:VirtualizedContainerService.HintSize="304,555.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["ERROR: Actvidad="+Actividad_str+". No se pudo encontrar el Número de Folio en el cuerpo del correo mail."+ Secuencia_str+"."]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="MessageSeq_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[MessageSeq_str]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[MessageSeq_str+"No se pudo encontrar el Número de Folio en el cuerpo del correo mail."]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="262.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[MessageSeq_str]" />
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[io_Folio_str]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="HayErrorEnObtenerDatos_bln" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[HayErrorEnObtenerDatos_bln]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_132">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.4) Obtener Tipo De Movimiento."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap2010:Annotation.AnnotationText="1.1.2.4) Obtener Tipo De Movimiento" DisplayName="1.1.2.4) Obtener Tipo De Movimiento" sap:VirtualizedContainerService.HintSize="558.4,1159.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+              <Variable x:TypeArguments="x:String" Name="Folio_str" />
+              <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+              <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+              <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionIni_int" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionFin_int" />
+              <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+              <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="496,81.6" sap2010:WorkflowViewState.IdRef="Assign_97">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["1.1.2.4) Obtener Tipo De Movimiento."]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Sequence DisplayName="Obtener Tipo de Movi del mail" sap:VirtualizedContainerService.HintSize="496,801.6" sap2010:WorkflowViewState.IdRef="Sequence_61">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_98">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Tipo:</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_99">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_100">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_101">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_102">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Environment.newLine]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="io_TipoSolicitud_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_103">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[io_TipoSolicitud_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(1,TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)).ToString.TrimStart.TrimEnd.Replace(Environment.newLine,"").Trim.TrimStart.TrimEnd.ToUpper]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="496,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Actividades ignoradas" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                  <Assign DisplayName="io_TipoSolicitud_str" sap:VirtualizedContainerService.HintSize="449.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_120">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[io_TipoSolicitud_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+          </Sequence>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="558.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_133">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.5) Obtener Número de Póliza Anterior."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap2010:Annotation.AnnotationText="1.1.2.5) Obtener Número de Póliza Anterior" DisplayName="1.1.2.5) Obtener Número de Póliza Anterior" sap:VirtualizedContainerService.HintSize="558.4,114.4" sap2010:WorkflowViewState.IdRef="Sequence_50">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Name="ArrayString_lst" />
+              <Variable x:TypeArguments="x:String" Name="Folio_str" />
+              <Variable x:TypeArguments="x:Int32" Name="Folio_int" />
+              <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+              <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionIni_int" />
+              <Variable x:TypeArguments="x:Int32" Name="PosicionFin_int" />
+              <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+              <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Actividad_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_104">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Actividad_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["1.1.2.5) Obtener Número de Póliza Anterior."]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="io_NumeroPolizaAnterior_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_121">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:CommentOut sap2010:Annotation.AnnotationText="SE COMENTO ESTE CODIGO PORQUE LA POLIZA ANTERIOR SE VA A OBTENER DEL PDF." DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="433.6,128.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Actividades ignoradas" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                  <If Condition="[io_TipoSolicitud_str.Contains(&quot;RENOVACION&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="If_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="914.4,1286.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_107">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["Póliza No:"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_108">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_109">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_110">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_111">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[Environment.newLine]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="io_NumeroPolizaAnterior_str" sap:VirtualizedContainerService.HintSize="872.8,60" sap2010:WorkflowViewState.IdRef="Assign_112">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(1,TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)).ToString.TrimStart.TrimEnd.Replace(Environment.newLine,"").Trim.TrimStart.TrimEnd.ToUpper]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[io_NumeroPolizaAnterior_str.IndexOf(&quot;07&quot;)&gt;0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="872.8,593.6" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="io_NumeroPolizaAnterior_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_105">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str.Substring(io_NumeroPolizaAnterior_str.IndexOf("07"),8)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="524.8,434.4" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[io_Subject_str.IndexOf(&quot;07&quot;)&gt;0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="483.2,341.6" sap2010:WorkflowViewState.IdRef="If_2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="io_NumeroPolizaAnterior_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_106">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[io_Subject_str.Substring(io_Subject_str.IndexOf("07"),8)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Assign DisplayName="io_NumeroPolizaAnterior_str" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_118">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[io_NumeroPolizaAnterior_str]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+          <Assign DisplayName="out_Config(&quot;ErrorTexto&quot;)." sap:VirtualizedContainerService.HintSize="484.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_134">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Object">[out_Config("ErrorTexto")]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Error en: "+"1.1.2.6) Obtener Url del Certificado Pdf."]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:CommentOut sap2010:Annotation.AnnotationText="" DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="484.8,96.8" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence sap2010:Annotation.AnnotationText="1.1.2.6) Obtener Url del Certificado Pdf" DisplayName="1.1.2.6) Obtener Url del Certificado Pdf" sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="CadenaParaSplit_str" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="io_UrlDelPdf_str" sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_123">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[io_UrlDelPdf_str]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[(i_Body_str.Contains(out_Config(&quot;TieneCertificateDeclarationPage&quot;).ToString))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="510.4,1362.4" sap2010:WorkflowViewState.IdRef="If_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476.8,1179.2" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="s:String[]" Name="CadenaSplited_lst" />
+                          <Variable x:TypeArguments="x:String" Name="CadIni_str" />
+                          <Variable x:TypeArguments="x:String" Name="CadFIN_str" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="CadenaParaSplit_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_122">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadenaParaSplit_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Certificate Declaration Page</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CadenaSplited_lst" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_124">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:String[]">[CadenaSplited_lst]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:String[]">[Split(i_Body_str.ToString,CadenaParaSplit_str)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="TextoParaTrabajar_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_125">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[TextoParaTrabajar_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[CadenaSplited_lst(1).ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;TextoParaTrabajar_str= &quot;+TextoParaTrabajar_str]" />
+                        <Assign DisplayName="CadIni_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_126">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadIni_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">https</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_127">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">&gt;</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Actividades ignoradas" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                              <Assign DisplayName="CadFIN_str" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_135">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[CadFIN_str]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[".pdf"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <Assign DisplayName="io_UrlDelPdf_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_128">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[io_UrlDelPdf_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[TextoParaTrabajar_str.ToString.Substring(TextoParaTrabajar_str.ToString.IndexOf(CadIni_str),TextoParaTrabajar_str.ToString.IndexOf(CadFIN_str)+CadFIN_str.Length-(TextoParaTrabajar_str.ToString.IndexOf(CadIni_str)))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="io_UrlDelPdf_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_136">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[io_UrlDelPdf_str]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[io_UrlDelPdf_str.Replace("&gt;","")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;io_UrlDelPdf_str=&quot;+io_UrlDelPdf_str]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Assign DisplayName="io_MessageSeq_str" sap:VirtualizedContainerService.HintSize="484.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_65">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[io_MessageSeq_str]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[MessageSeq_str]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["___FIN: "+Secuencia_str]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Sequence Exception exception" sap:VirtualizedContainerService.HintSize="449.6,425.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Mensaje_str" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[Mensaje_str]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Excepción:"+System.DateTime.Now.ToString(“dd/MM/yyyy HH:mm”)+" , "+out_Config("ErrorTexto").ToString+" Favor de Verificar el Log. Secuencia "+Secuencia_str.ToString+". Excepción: "+exception.Message.ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="376.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">[Mensaje_str]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">e</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <Assign DisplayName="io_HayError_bln" sap:VirtualizedContainerService.HintSize="376.8,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[io_HayError_bln]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
