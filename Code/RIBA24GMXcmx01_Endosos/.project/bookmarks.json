@@ -6,7 +6,7 @@
         "Annotation": null,
         "Id": "e03b45c9-e2bd-4c4b-9a7e-d90d585ea97f",
         "ActivityIdRef": "NApplicationCard_36",
-        "ActivityId": "1.3177",
+        "ActivityId": "1.3239",
         "ActivityName": "Utilizar Aplicación: SIIGMX",
         "IsTransient": false
       },
@@ -15,7 +15,7 @@
         "Annotation": null,
         "Id": "cd5d475b-8594-4850-939a-d053a67ebeed",
         "ActivityIdRef": "Assign_2037",
-        "ActivityId": "1.3058",
+        "ActivityId": "1.3120",
         "ActivityName": "Asignar",
         "IsTransient": false
       },

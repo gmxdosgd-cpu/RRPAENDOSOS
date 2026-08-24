@@ -1,11 +1,11 @@
 ﻿{
   "processName": "RIBA24GMXcmx01_Endosos",
-  "startedAt": "2026-08-14 17:30:28",
-  "durationSeconds": 44,
-  "durationLabel": "00:00:44",
-  "completedAt": "",
-  "lastUpdated": "17:31:12",
-  "lastDatabaseUpdate": "17:31:12",
+  "startedAt": "2026-08-24 10:05:14",
+  "durationSeconds": 298,
+  "durationLabel": "00:04:58",
+  "completedAt": "2026-08-24 10:10:12",
+  "lastUpdated": "10:10:12",
+  "lastDatabaseUpdate": "10:10:12",
   "errorMessage": "",
   "steps": [
     {
@@ -13,21 +13,21 @@
       "step_name": "Inicializar configuracion del robot",
       "status": "Finalizado",
       "description": "Lee Config.xlsx y deja listas las variables del panel.",
-      "updated_at": "17:30:30"
+      "updated_at": "10:05:16"
     },
     {
       "step_number": 2,
       "step_name": "Preparar solicitudes del dia",
       "status": "Finalizado",
       "description": "Prepara el archivo de control y las plantillas base del proceso.",
-      "updated_at": "17:30:42"
+      "updated_at": "10:05:28"
     },
     {
       "step_number": 3,
       "step_name": "Leer y organizar solicitudes",
       "status": "Finalizado",
       "description": "Obtiene los archivos multipoliza y organiza las carpetas de trabajo.",
-      "updated_at": "17:31:12"
+      "updated_at": "10:05:45"
     },
     {
       "step_number": 4,
@@ -74,37 +74,37 @@
     {
       "step_number": 10,
       "step_name": "Preparar solicitudes para registro en SII",
-      "status": "En proceso",
+      "status": "Finalizado",
       "description": "Lee las solicitudes listas y prepara la informacion que se capturara en SII.",
-      "updated_at": "17:31:12"
+      "updated_at": "10:05:49"
     },
     {
       "step_number": 11,
-      "step_name": "Iniciar sesion y registro de endoso en SII",
-      "status": "Sin comenzar",
-      "description": "Accede a SII e inicia el registro del endoso correspondiente.",
-      "updated_at": "--"
+      "step_name": "Iniciar sesion y registro de endoso en SII - Poliza 1 de 1 (7043068)",
+      "status": "Finalizado",
+      "description": "Poliza 1 de 1 (7043068): Accede a SII e inicia el registro del endoso correspondiente.",
+      "updated_at": "10:06:39"
     },
     {
       "step_number": 12,
-      "step_name": "Consultar poliza base en SII",
+      "step_name": "Consultar poliza base en SII - Poliza 1 de 1 (7043068)",
       "status": "Sin comenzar",
-      "description": "Busca la poliza anterior y valida la informacion de referencia.",
+      "description": "Poliza 1 de 1 (7043068): Busca la poliza anterior y valida la informacion de referencia.",
       "updated_at": "--"
     },
     {
       "step_number": 13,
-      "step_name": "Capturar informacion del endoso",
-      "status": "Sin comenzar",
-      "description": "Captura datos generales, riesgos y especificaciones del movimiento.",
-      "updated_at": "--"
+      "step_name": "Capturar informacion del endoso - Poliza 1 de 1 (7043068)",
+      "status": "Finalizado",
+      "description": "Poliza 1 de 1 (7043068): Captura datos generales, riesgos y especificaciones del movimiento.",
+      "updated_at": "10:08:24"
     },
     {
       "step_number": 14,
-      "step_name": "Grabar endoso y recuperar nueva poliza",
-      "status": "Sin comenzar",
-      "description": "Confirma el movimiento y recupera poliza, sufijo y numero de endoso.",
-      "updated_at": "--"
+      "step_name": "Grabar endoso y recuperar nueva poliza - Poliza 1 de 1 (7043068)",
+      "status": "Finalizado",
+      "description": "Poliza 1 de 1 (7043068): Confirma el movimiento y recupera poliza, sufijo y numero de endoso.",
+      "updated_at": "10:08:34"
     },
     {
       "step_number": 15,
@@ -116,37 +116,37 @@
     {
       "step_number": 16,
       "step_name": "Iniciar expediente digital GEDI",
-      "status": "Sin comenzar",
+      "status": "Finalizado",
       "description": "Lee las polizas emitidas y abre el flujo de expediente digital.",
-      "updated_at": "--"
+      "updated_at": "10:08:34"
     },
     {
       "step_number": 17,
-      "step_name": "Seleccionar y cargar documentos en GEDI",
-      "status": "Sin comenzar",
-      "description": "Selecciona condiciones y adjunta los documentos requeridos.",
-      "updated_at": "--"
+      "step_name": "Seleccionar y cargar documentos en GEDI - Poliza 1 de 1 (7043068)",
+      "status": "Finalizado",
+      "description": "Poliza 1 de 1 (7043068): Selecciona condiciones y adjunta los documentos requeridos.",
+      "updated_at": "10:09:59"
     },
     {
       "step_number": 18,
-      "step_name": "Generar y finalizar expediente digital",
-      "status": "Sin comenzar",
-      "description": "Genera el expediente, confirma el resultado y actualiza la solicitud.",
-      "updated_at": "--"
+      "step_name": "Generar y finalizar expediente digital - Poliza 1 de 1 (7043068)",
+      "status": "Finalizado",
+      "description": "Poliza 1 de 1 (7043068): Genera el expediente, confirma el resultado y actualiza la solicitud.",
+      "updated_at": "10:10:12"
     },
     {
       "step_number": 19,
       "step_name": "Actualizar y enviar reporte final",
-      "status": "Sin comenzar",
+      "status": "Finalizado",
       "description": "Actualiza estatus, envia el correo de cierre y organiza los mensajes.",
-      "updated_at": "--"
+      "updated_at": "10:10:12"
     },
     {
       "step_number": 20,
       "step_name": "Finalizar proceso de Endosos",
-      "status": "Sin comenzar",
+      "status": "Finalizado",
       "description": "Publica en el panel el cierre correcto o el error final del proceso.",
-      "updated_at": "--"
+      "updated_at": "10:10:12"
     }
   ]
 }
