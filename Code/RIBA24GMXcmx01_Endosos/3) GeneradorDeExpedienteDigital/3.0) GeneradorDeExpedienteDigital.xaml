@@ -172,7 +172,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia contiene las actividades principales para el generador de Expediente Digital" DisplayName="3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="1457.2,11164.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia contiene las actividades principales para el generador de Expediente Digital" DisplayName="3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="1597,3788" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Configuracion" />
       <Variable x:TypeArguments="sd:DataTable" Name="ConsolidadoNCWM_dt" />
@@ -212,7 +212,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch sap2010:Annotation.AnnotationText="Try Catch 3.0) GeneradorDeExpedienteDigital" DisplayName="Try Catch 3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="750.4,11110.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="Try Catch 3.0) GeneradorDeExpedienteDigital" DisplayName="Try Catch 3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="740,3734" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -220,14 +220,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try Sequence  3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="748.8,10249.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="Try Sequence  3.0) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="738,2873" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Secuencia_str Nombre de la Secuencia a ejecutar" sap:VirtualizedContainerService.HintSize="715.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign DisplayName="Secuencia_str Nombre de la Secuencia a ejecutar" sap:VirtualizedContainerService.HintSize="704,175" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Secuencia_str]</OutArgument>
             </Assign.To>
@@ -235,7 +235,7 @@
               <InArgument x:TypeArguments="x:String">3.0) GeneradorDeExpedienteDigital</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="715.2,56.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="704,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["___INI: "+Secuencia_str]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
@@ -248,7 +248,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <Sequence sap2010:Annotation.AnnotationText="3.0.0) Leer Archivo io_ArchivoSolicitudesDelDia_str" DisplayName="3.0.0) Leer Archivo io_ArchivoSolicitudesDelDia_str" sap:VirtualizedContainerService.HintSize="715.2,88" sap2010:WorkflowViewState.IdRef="Sequence_664">
+          <Sequence sap2010:Annotation.AnnotationText="3.0.0) Leer Archivo io_ArchivoSolicitudesDelDia_str" DisplayName="3.0.0) Leer Archivo io_ArchivoSolicitudesDelDia_str" sap:VirtualizedContainerService.HintSize="704,88" sap2010:WorkflowViewState.IdRef="Sequence_664">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="DatosParaHC_tbl" />
               <Variable x:TypeArguments="sd:DataTable" Name="EspecifParaHC_tbl" />
@@ -330,13 +330,13 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
           </Sequence>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArchivoSolicitudesDelDia_dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="715.2,527.2" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ArchivoSolicitudesDelDia_dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="704,528" sap2010:WorkflowViewState.IdRef="ForEachRow_16">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowSolicitud" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="449.6,345.6" sap2010:WorkflowViewState.IdRef="Sequence_753">
+                <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="450,346" sap2010:WorkflowViewState.IdRef="Sequence_753">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -344,7 +344,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Ramo_74]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ReadRange_16" SheetName="Endosos_ramo_74" WorkbookPath="[CurrentRowSolicitud(&quot;ARCH_EXCEL&quot;).ToString]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_790">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_790">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[Carpeta]</OutArgument>
                     </Assign.To>
@@ -362,18 +362,38 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <If Condition="[dt_Ramo_74 IsNot Nothing AndAlso dt_Ramo_74.Rows.Count &gt; 0 AndAlso dt_Ramo_74.Columns.Contains(&quot;POLIZA_NUEVA&quot;) AndAlso dt_Ramo_74.AsEnumerable().Any(Function(fila) Not fila.IsNull(&quot;POLIZA_NUEVA&quot;) AndAlso fila(&quot;POLIZA_NUEVA&quot;).ToString.Trim.Length &gt; 5)]" DisplayName="Panel - iniciar GEDI solo con polizas validas" sap:VirtualizedContainerService.HintSize="416,300" sap2010:WorkflowViewState.IdRef="If_PanelEndosos_16_ConPolizas">
+          <If Condition="[dt_Ramo_74 IsNot Nothing AndAlso dt_Ramo_74.Rows.Count &gt; 0 AndAlso dt_Ramo_74.Columns.Contains(&quot;POLIZA_NUEVA&quot;) AndAlso dt_Ramo_74.AsEnumerable().Any(Function(fila) Not fila.IsNull(&quot;POLIZA_NUEVA&quot;) AndAlso fila(&quot;POLIZA_NUEVA&quot;).ToString.Trim.Length &gt; 5)]" DisplayName="Panel - iniciar GEDI solo con polizas validas" sap:VirtualizedContainerService.HintSize="704,487" sap2010:WorkflowViewState.IdRef="If_PanelEndosos_16_ConPolizas">
             <If.Then>
-              <Sequence DisplayName="Publicar paso real" sap:VirtualizedContainerService.HintSize="382,230" sap2010:WorkflowViewState.IdRef="Sequence_PanelEndosos_16_ConPolizas_Then">
-                <sap:WorkflowViewStateService.ViewState><scg:Dictionary x:TypeArguments="x:String, x:Object"><x:Boolean x:Key="IsExpanded">True</x:Boolean></scg:Dictionary></sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 16: Iniciar expediente digital GEDI" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_16_inicio_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 16</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" /></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+              <Sequence DisplayName="Publicar paso real" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_PanelEndosos_16_ConPolizas_Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 16: Iniciar expediente digital GEDI" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_16_inicio_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 16</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
               </Sequence>
             </If.Then>
-            <If.Else><Sequence DisplayName="Sin solicitudes: no publicar" sap:VirtualizedContainerService.HintSize="382,80" sap2010:WorkflowViewState.IdRef="Sequence_PanelEndosos_16_ConPolizas_Else" /></If.Else>
+            <If.Else>
+              <Sequence DisplayName="Sin solicitudes: no publicar" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_PanelEndosos_16_ConPolizas_Else">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
           </If>
-          <Sequence sap2010:Annotation.AnnotationText="3.0.2) Procesar cada Row de ArchivoSolicitudesDelDia_dt con Número de Póliza" DisplayName="3.0.2) Procesar cada Row de ArchivoSolicitudesDelDia_dt con Número de Póliza" sap:VirtualizedContainerService.HintSize="715.2,9144.8" sap2010:WorkflowViewState.IdRef="Sequence_665">
+          <Sequence sap2010:Annotation.AnnotationText="3.0.2) Procesar cada Row de ArchivoSolicitudesDelDia_dt con Número de Póliza" DisplayName="3.0.2) Procesar cada Row de ArchivoSolicitudesDelDia_dt con Número de Póliza" sap:VirtualizedContainerService.HintSize="704,1280" sap2010:WorkflowViewState.IdRef="Sequence_665">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Int32" Name="Cont" /><Variable x:TypeArguments="x:Int32" Name="GediPanelIndex_Int" />
+              <Variable x:TypeArguments="x:Int32" Name="Cont" />
+              <Variable x:TypeArguments="x:Int32" Name="GediPanelIndex_Int" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -382,7 +402,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="681.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_791">
+            <Assign sap:VirtualizedContainerService.HintSize="514,175" sap2010:WorkflowViewState.IdRef="Assign_791">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[Cont]</OutArgument>
               </Assign.To>
@@ -390,13 +410,13 @@
                 <InArgument x:TypeArguments="x:Int32">1</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[GediPanelIndex_Int]" DataTable="[dt_Ramo_74]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="681.6,8742.4" sap2010:WorkflowViewState.IdRef="ForEachRow_15">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[GediPanelIndex_Int]" DataTable="[dt_Ramo_74]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="514,877" sap2010:WorkflowViewState.IdRef="ForEachRow_15">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRowRamo74" />
                   </ActivityAction.Argument>
-                  <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="656,8490.4" sap2010:WorkflowViewState.IdRef="TryCatch_19">
+                  <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="452,625" sap2010:WorkflowViewState.IdRef="TryCatch_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,7 +424,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="654.4,7808.8" sap2010:WorkflowViewState.IdRef="Sequence_777">
+                      <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_777">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="Apellido1_str" />
                           <Variable x:TypeArguments="x:String" Name="Apellido2_str" />
@@ -419,12 +439,12 @@
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="620.8,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_63" Text="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString + &quot;LEYENDA&quot;]" />
-                        <If sap2010:Annotation.AnnotationText="Cambio Poliza?Nueva Por Poliza?Anterior" Condition="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString.Trim.Length &gt; 5]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="620.8,7626.4" sap2010:WorkflowViewState.IdRef="If_157">
+                        <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="657,123" sap2010:WorkflowViewState.IdRef="WriteLine_63" Text="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString + &quot;LEYENDA&quot;]" />
+                        <If sap2010:Annotation.AnnotationText="Cambio Poliza?Nueva Por Poliza?Anterior" Condition="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString.Trim.Length &gt; 5]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="657,5342" sap2010:WorkflowViewState.IdRef="If_157">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -433,17 +453,45 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="619.2,7376.8" sap2010:WorkflowViewState.IdRef="Sequence_806">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="655,5092" sap2010:WorkflowViewState.IdRef="Sequence_806">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Panel GEDI - indice dinamico de poliza" sap:VirtualizedContainerService.HintSize="620.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_PanelGediIndice"><Assign.To><OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemIndice")]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Object">[GediPanelIndex_Int + 1]</InArgument></Assign.Value></Assign>
-                              <Assign DisplayName="Panel GEDI - total dinamico de polizas" sap:VirtualizedContainerService.HintSize="620.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_PanelGediTotal"><Assign.To><OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemTotal")]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Object">[dt_Ramo_74.Rows.Count]</InArgument></Assign.Value></Assign>
-                              <Assign DisplayName="Panel GEDI - poliza actual" sap:VirtualizedContainerService.HintSize="620.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_PanelGediId"><Assign.To><OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemIdentificador")]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Object">[If(dt_Ramo_74.Columns.Contains("POLIZA_NUEVA") AndAlso Not IsDBNull(CurrentRowRamo74("POLIZA_NUEVA")), CurrentRowRamo74("POLIZA_NUEVA").ToString, String.Empty)]</InArgument></Assign.Value></Assign>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 17 por poliza GEDI" sap:VirtualizedContainerService.HintSize="620.8,174" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_17_iteracion_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 17</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" /></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
-                              <Assign DisplayName="MensajeDeError_str" sap:VirtualizedContainerService.HintSize="585.6,174.4" sap2010:WorkflowViewState.IdRef="Assign_774">
+                              <Assign DisplayName="Panel GEDI - indice dinamico de poliza" sap:VirtualizedContainerService.HintSize="621,175" sap2010:WorkflowViewState.IdRef="Assign_PanelGediIndice">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemIndice")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[GediPanelIndex_Int + 1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Panel GEDI - total dinamico de polizas" sap:VirtualizedContainerService.HintSize="621,175" sap2010:WorkflowViewState.IdRef="Assign_PanelGediTotal">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemTotal")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[dt_Ramo_74.Rows.Count]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Panel GEDI - poliza actual" sap:VirtualizedContainerService.HintSize="621,175" sap2010:WorkflowViewState.IdRef="Assign_PanelGediId">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[out_Config("PanelItemIdentificador")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[If(dt_Ramo_74.Columns.Contains("POLIZA_NUEVA") AndAlso Not IsDBNull(CurrentRowRamo74("POLIZA_NUEVA")), CurrentRowRamo74("POLIZA_NUEVA").ToString, String.Empty)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 17 por poliza GEDI" sap:VirtualizedContainerService.HintSize="621,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_17_iteracion_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 17</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" />
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <Assign DisplayName="MensajeDeError_str" sap:VirtualizedContainerService.HintSize="621,175" sap2010:WorkflowViewState.IdRef="Assign_774">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[MensajeDeError_str]</OutArgument>
                                 </Assign.To>
@@ -453,13 +501,13 @@
                                   </InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Utilizar Navegador Chrome: GENERADOR DE EXPEDIENTE DIGITAL(GEDi)" sap:VirtualizedContainerService.HintSize="585.6,6980.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[WebGenExp_win]" ScopeGuid="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Version="V2" WindowResize="Maximize">
+                              <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Utilizar Navegador Chrome: GENERADOR DE EXPEDIENTE DIGITAL(GEDi)" sap:VirtualizedContainerService.HintSize="621,3789" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[WebGenExp_win]" ScopeGuid="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Version="V2" WindowResize="Maximize">
                                 <uix:NApplicationCard.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="552,6732" sap2010:WorkflowViewState.IdRef="Sequence_778">
+                                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="554,3539" sap2010:WorkflowViewState.IdRef="Sequence_778">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Boolean" Name="ExpedienteProcesado_bln" />
                                       </Sequence.Variables>
@@ -469,17 +517,17 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="518.4,2344.8" sap2010:WorkflowViewState.IdRef="Sequence_779">
+                                      <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="520,57" sap2010:WorkflowViewState.IdRef="Sequence_779">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="PasswordGenExpDig_str" />
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="451.2,2251.2" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+                                        <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="452,2254" sap2010:WorkflowViewState.IdRef="TryCatch_16">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -487,15 +535,15 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <TryCatch.Try>
-                                            <Sequence DisplayName="CASO CUANDO NO ESTA LOG-IN" sap:VirtualizedContainerService.HintSize="449.6,1896.8" sap2010:WorkflowViewState.IdRef="Sequence_785">
+                                            <Sequence DisplayName="CASO CUANDO NO ESTA LOG-IN" sap:VirtualizedContainerService.HintSize="450,1899" sap2010:WorkflowViewState.IdRef="Sequence_785">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Escribir en 'Iniciar sesión'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[out_Config(&quot;UsuarioGenExpDig&quot;).ToString]" Timeout="30" Version="V1">
+                                              <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Escribir en 'Iniciar sesión'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[out_Config(&quot;UsuarioGenExpDig&quot;).ToString]" Timeout="30" Version="V1">
                                                 <uix:NTypeInto.Target>
                                                   <uix:TargetAnchorable BrowserURL="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=ee7d8f13-4653-4e7b-80a7-826b447f311c&amp;redirect_uri=https%3A%2F%2Fewsp.gmx.com.mx%2FGEDIV2%2FStarting.aspx&amp;response_mode=form_post&amp;response_type=id_token&amp;scope=openid%20profile&amp;state=OpenIdConnect.AuthenticationProperties%3DDOcx792fxvtQChuo8LfjIBvwMbYd5e0kZedrJmLjRlOIip7hQj8eQthXwlQfi9X4OFA6vM4dQNJrmDyFnXlfeieFLghylvG6Tgp16LhbysCFSManrj2eo_SBwMtR4s3Gn7RFyR11XBf35CmZaK4NA7F73NV5HN_JtgxQRVX5I3iZQSOxE7-VP0iqea6LNzsqX_8cgIAzHBaZD_mXsPtpN-Gfg4sMIBJ62nlIKr3OXrk&amp;nonce=638381745590506084.ZGIzMzIwMDItMzE2Zi00MjMwLTg4NzktY2M2ZGFlYWNiMmFjOTdhMzViMzItMDJmMi00YjRlLWEwZTItNmIyMjI5NTQxYjdj&amp;x-client-SKU=ID_NET472&amp;x-client-ver=6.19.0.0&amp;sso_reload=true" DesignTimeRectangle="794, 505, 348, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='i0116' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='i0116' tag='INPUT' type='email' class='form-control ltr_override input ext-input text-box ext-text-box' aaname='' /&gt;" Guid="2ee5eeea-71c2-4cda-91e7-5ebaa778855d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWAAAAAoCAYAAADAHSD5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYBSURBVHhe7ZqxchQ7EEX5Wr8P4QcghZTQIcGrcgaRMyIiisAkRCaxE5J9dYyv627Tmpl95bJ27XuqVDPSSN0tqXV3du1XuxBCCFOIAIcQwiQiwCGEMIkIcAghTCICHEIIk4gAhxDCJCLAIYQwiQhwCCFMIgIcQgiTiACHEMIkIsAhhDCJCHAIIUwiAhxCCJOIAIcQwiRaAf727dvu7Oxsr9B26vz+/Xv34cOH3eXl5X3L0/Px48e7GIhlKzc3N7u3b9/ejT1GFF+XIz9//ty9efPm7upQf/369cnmFnvh50N7cww5Fk6HvwSYROIwcagEh+XLly/3tdPlMQ+HbB0iHvg9hYNJjIeI/UiAaWeNPJdgSbCPHe27rw9tnz59urs+Zo6F58+eAJM0JA9J9Bx5zMMhW4eIyPX19f3dcfNYAswHdxVfoO39+/d/vRWfAsTcvdGLCHA4hAcBPuSthOTT10eKi7YSkDcCrvSjv8SddsYoQautmrhLvkYwB/WnaE7d4VDbyL7WxZ//+PFjLybNET/05dsC7S5i3Ks/xddZ47jKLnWJVxc3uE3FIJb8jahrQZHPpXXqcod7t6NndT99nvjyMT5f+fj69eteHHVe/ydflvxWurk6da9UZ8z3799b8Wav6D+aY42nznEp3nDcPAgwm8pbiQ7DCBKvO+xKdCVc7UOS1GThuSdkTe41Xx2MwYbm4T5Gh8Njwj4FFI8/R1x9nn4QuWeOGg/q523Ewrx8nozTvOoY1Wuc6g9XV1d7c1zytwZ+ujmsrZPPZ7QHQHt9A67zqWuvuucDz9wPfg/NlzW/HTwbCV9dK7dfn4GvRTfHGg/tS2cmnBYPAswGLiUqdAkEnkTqo8MpGOOHBehTbVGnfYuvisbUZJSfarObM3b1QaRYOjpf3FcBoK3OG9z2aJxiq3F7jJUt/taofT0W4TFQJALduoD2AOjve8i1ezN0v/IhG+B26hqJ6svZ4ncEY9gzhNjn6nFQ6l7Q5rbX5gg+xtdRUN+6t+G42BPg7uA6ShBPOFDS0e4J6HgSgfqRwLXQ/uvXr1VfFcXX2SRBa2xcu74cLH5m8L6VLg7u6xrWeQv6qr0b521d3J1N2OJvDWz4gaY+WieEyPNibQ+APi6K3fyB553IC2/rnoPWrrbDFr9rYMPnJn/v3r0b2q7fyBTbaA7U6Xd7e3t3retKoX3L3objYu8niO5twCFBurcJTyTdSyxEFYZRP7HFV2WUwKL6rDE5S36ge859PXT46N5O6Cvf3Thv6+LubMIWf2tUG9SXxvq6r+0B0KcKcGef54cI8KH5ssXvFuhfRZU6H1CdX9aW9uqnmyMoTgmw8iCcPg8CDCTG6GCDkqsmgCf/qE93iJf8bfFVGY0R9TmJTcKPDtqW+PywdPZGPohBttfGHRL3Fn9r1L5L/oB2ntNvbQ+A/r6HXNd+CnAfYovf6svZ4ncL7sPjwE79aQloZ33rOndzBO/H1ceE02ZPgJUANflIIP0fcJdUnhSjg0C9s1vfErhXfc1XRzeG2KnX2FR3e6zB58+f7+67+Oof4Xye9GP9sCE6H9j1g9+N87Ytca/9Ec79YWdpDetedTZ9nbh34eA62gOgfxVFbLvParPWYYtf7C7Ndc1vBdsXFxf3tT/4emmttFdca0yaP3vSzYfCPTDO945rzUnuR/GG42ZPgAVJ6b8veUIAm+3PPcFrAop6qEW1Vfss+RqBr25MF5uSXn3rYVHCV1ug2DSGel0rkN+Rj26ct3VxV5s+fs0fc6j74/iaqJ+3VZt6RsxitAdA/+6tlD4+xu11Pro27t2G+x2x5LdS14HCWrPm0O2V7Ltd2nwcyDYfVu6jxlPnWO2E06EV4PB84aCen5//JX7haUGA64dg94ESnjcR4BcGh5zDnzemeSCw9VsJRIBfHhHgEJ4IBBfh7cQXIsAvjwhwCCFMIgIcQgiTiACHEMIkIsAhhDCJCHAIIUwiAhxCCJOIAIcQwiQiwCGEMIkIcAghTOJBgF/9829KSkpKyhMUkTfgEEKYRAQ4hBCmsNv9B2kb5WraotLtAAAAAElFTkSuQmCC" InformativeScreenshot="b927a0eab702330f36e17151f1874c45.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Iniciar sesión en la cuenta' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                                                     <uix:TargetAnchorable.Anchors>
@@ -512,7 +560,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </uix:NTypeInto>
-                                              <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                              <Delay DisplayName="Retraso" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
                                               <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -581,7 +629,7 @@
                                                   </Sequence>
                                                 </TryCatch.Finally>
                                               </TryCatch>
-                                              <Assign DisplayName="PasswordGenExpDig_str" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="Assign_775">
+                                              <Assign DisplayName="PasswordGenExpDig_str" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_775">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[PasswordGenExpDig_str]</OutArgument>
                                                 </Assign.To>
@@ -674,7 +722,7 @@
                                           </TryCatch.Finally>
                                         </TryCatch>
                                       </Sequence>
-                                      <Sequence sap2010:Annotation.AnnotationText="Propocionar datos al portal" DisplayName="Propocionar datos al portal" sap:VirtualizedContainerService.HintSize="518.4,4010.4" sap2010:WorkflowViewState.IdRef="Sequence_790">
+                                      <Sequence sap2010:Annotation.AnnotationText="Propocionar datos al portal" DisplayName="Propocionar datos al portal" sap:VirtualizedContainerService.HintSize="520,3104" sap2010:WorkflowViewState.IdRef="Sequence_790">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -682,14 +730,14 @@
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="484.8,3836" sap2010:WorkflowViewState.IdRef="Sequence_788">
+                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="486,2929" sap2010:WorkflowViewState.IdRef="Sequence_788">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Oficina'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUCURSAL&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Escribir en 'INPUT Oficina'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUCURSAL&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="542, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Oficina' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Oficina' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="e535eb5a-fd70-4924-be1c-146a92926a9f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVHhe7Zy/bsIwEIf7wF07sjCyMbKx8BIMDDxAJUSJBKgFIQaoRP/RMnLNOU5kLrYxMaqK8vskixg7TiR/uvNyuSMAArHKcjwe9RWoI679P5Fl9/5J0+cVTWZLenyaodW0JbMFTV9WtPv40mZkFLKwKPPlmvY/B/0PqDP774PywRSmkIUjCkQBJiwMR5gcJQvnqEkaegCQJPNlcYYpIgvnKgAkpheQBXiBLCAYyAKCgSwgGMgCgoEsIJh4WbZDaj406N5onbEeMynmtamf8HX6u9VjLtQ9AfPAnxAny7hnkSOhDkvRTXSfeaV+yyERuBkiZMmksAvAY2ZEkH1wi1SXhaNKa0gb3ZWMug1qDl7LaUrdY5FHR6m8ZRKa8/LolEmazfOvoZ4PrkZlWTaDtkg1p5yOn4k0apN7NNJdFqzvkMWcx0Kawo66xhpyTRDNP5DFd545M09FLZcQ8pkglsqyBKchhU8W36ZeKItMeZDlqlSXJXiTGV//SpGlFGV87weqECFLijoXyA3hTZKHS58sOmWJCOE6szhlkZHO+m4ghjhZmFLot0UJvyxMJoxMHxfIoseLNdLDrnwGiCNeFlAbIAsIBrKAYCALCAaygGAgCwimJAvXhXDJIgAS9qJUN8SVZ1yBBkCOtSKR4ZrW+WINYYBC1TqnPrzZap0ZFoZN4lJWzlVo9Wz5VxRMUZgTWXJc3+cA9cC1/1ZZAChD9Au3VFoPd+Ek+QAAAABJRU5ErkJggg==" InformativeScreenshot="b63cc72d063861cea6ffc9761004e74b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
@@ -701,12 +749,12 @@
                                             </uix:NTypeInto.Target>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Ramo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;C_RAMO&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Ramo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;C_RAMO&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="701, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="48605910-a0b2-4853-a501-738f666cb8bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIESURBVHhe7Zy9bsIwFEb7wF0ZuzCyMWZj4SUYGHiAShUlEqAWhBgAif7RMnLr69jBdq6oBQmVyHckSwQ7WXzyXS83dwRAJKIsh8PB/AJ1RXLAk2X7/knjlwWNJnN6fJ5g1HikkxmNXxe0/fgydjiysCjT+ZJ2P3vzD6g7u++9dsIKk8vCiQJRQAgLwwnDaFm4Po1U7AAgkU7n2pE8WbhOASBh3YAs4E8gC4gGsoBoIAuIBrKAaCALiOZ8WYZdum88eKPZ35hJcItcJktrQCtzSesBNZUwydBcg5ujPFkUTx2kyy1ToSwb6rXcMtWlJzNDlFLSaFNvmKXRsYTx/9J6xp2T5kHVlCeLPsM4G6jKUhKIcxTJbLy935Sw4/3yeje1Vv12QVZQLZfJkr/lanRSMyGjNzdfY5JlbS4LcgTrhRQrPgNUTUnJkr354eGWy5IsVHGjea17vyuLL5olEwwH6utRkiyKoAyFh93TyXJaFjlZWBYkyzUpTxaFThK9weFbn12fLYtJLpxZ/pdSZfE2VSeNLUFtSjoXJIsme3b+TIhydc6XBdQOyAKigSwgGsgCooEsIBrIAqLxZOGeEG5XBECC3fD6hrjrjLvPAHApdCQy3M86nS0hDMjRvc7Kibew15lhYdgibmXlOoVR32G/omBFYTxZLNK3OUC9kBwQZQGgCNEv9aB47DTYdZcAAAAASUVORK5CYII=" InformativeScreenshot="7204a39a74837e797fc32de00a333f1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
@@ -718,12 +766,12 @@
                                             </uix:NTypeInto.Target>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Poliza'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_31" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Poliza'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NTypeInto_31" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="861, 280, 215, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="25bf9930-54da-41cf-9ea0-18be71fdd14d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANsAAAAjCAYAAAAdQn80AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVHhe7d27TgJBFIBhH5jW0saSjpKOhpewoOABTAxKIkQhxAJI8IZactyzs7vMwK7cZkfQ/0smYZFL458zUAxnAiCI3NgWi0VyC8CuivpxYpu9vMn9w0juekO5vu2xWKw9Vrc3kPvHkcxe35OyjCw2Da0/fJL551dyD4B9zT++4p7s4LLYdKIRGuCPBqcTLhXHpnvMu2j0AfCr2x9mn+GyyaZ7TQB+2V0RG1AiYgMCITYgEGIDAiE2IBBiAwLZP7ZJWy7PL6RircvWNPnjJlO5ql5IvWOuxq2aVKptGZtL4E86MLam3CSXIl2pbx2cGxvwH3iMLdJpSqXRTS5+Qmz4f7zGFm8Hs9jMpFtuM+3HrsSmkSbbyPg1nOdFq+g12XrihHiMzYRgAlrfUrqfy4pjc6y+R/S45TS03w84fgfGZk0Z+x8/Nx6NoyZXE729TWybt5o3jV2+lAF+l8fJtuRuJ1N2PJtjyw/JPM8OnNhwKkqJrXhSbTnZtpx0TDacknJiO+QzW/y6aZQ2exuq1t8DOGYlxaZMDNmWz5lURbGZ++1tov1c95vKptSZbDgh+8cGYCfEBgRCbEAgxAYEQmxAIMQGBLIWm55rp0cmA/BLu1o7N1JPbtUTXAH4kXsistIzyfuDJ4IDPIjP+o96es47619pcFqiHkWue00Wi7X7Sn/Fxg5NObGlin5fCsBmRf3kxgbAN5FvNsO6eDgllGwAAAAASUVORK5CYII=" InformativeScreenshot="6fcf4bebdbcb95374dc45282c6e48ac3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
@@ -735,12 +783,12 @@
                                             </uix:NTypeInto.Target>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Endoso'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_32" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;T_ENDOSO&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Endoso'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NTypeInto_32" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;T_ENDOSO&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1100, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="74e1b423-57f4-451c-aceb-82f9404bff70" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVHhe7Zw9b8IwEIb7g1k7dmFkY2Rj4U8wMPADKiHaSIBaEGKASvS7jFxz/uLiOGCSViDlfSRLSRzHkfzozhkuNwRAJEFZ9vu9OQJ1pGj9M7Js3z5o8rSkx+mC7h+maDVtyXROk+clbd8/jRkaJwuLMlus6OtnZ66AOvP1vVM+SGGcLBxRIAqQsDAcYSxKFs5Rj2noAcAnmS3cHsZFFs5VAPhILyALOApkAdFAFhANZAHRQBYQDWQB0ZSXZTOk5u0dNWRrDWltus9lPWhTo5uYM3CNVJSlRyNzWhXIcv1AFhDN/8gy7qmUNGIBbIryReB7XArrUT8nS0Id16/vkXMpuYJ9L9RvyXFt6m9MF6hERVnkotxRc/Ci+4wI7tzc2xnrU90vFtg+y8miRXHjU5Qcdk/kizpOzLERRUrnzwVK86+RRW52R93D4stjSyYNBcZrgUyUUHMHIkbwnbRATlRQmgvIEl48KUt4/+KNU/PriJaJWDnJwnKC87mayMLXjkcWliW0/9ApSwlT8E78bESW6lxEFr05FWNtlHDR5MSeJX3+YfFlxNHHmajE71L0nuAsKsqi08ChmUU5IQujhTHj0nvVl1Mm9XhfQ/J53tzZKGWEcf0Q5a8oLwuoHZAFRANZQDSQBUQDWUA0kAVEk5OF60K4ZBEAH/YiVzfElWdcgQaAJViRyHBN62y+gjBAoWqdUx9eQ7XODAvDJnEpK+cqtHo2+xcFKQqTkcVS9H8OUA+K1j8oCwB5iH4BcXpQ2w8LDTIAAAAASUVORK5CYII=" InformativeScreenshot="6fd523ba177727dfe8642394105d0db8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
@@ -752,12 +800,12 @@
                                             </uix:NTypeInto.Target>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="TOMAR EL SUFIJO DEL MENSAJE DE LA POLIZA NUEVA Y PONERLO EN ESTE CAMPO. Y SI ES POLIZA IICIAL SE CONSIDERA COMO 1." ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Renovacion'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,311.2" sap2010:WorkflowViewState.IdRef="NTypeInto_33" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUFIJO_NUEVO&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="TOMAR EL SUFIJO DEL MENSAJE DE LA POLIZA NUEVA Y PONERLO EN ESTE CAMPO. Y SI ES POLIZA IICIAL SE CONSIDERA COMO 1." ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Renovacion'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="NTypeInto_33" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUFIJO_NUEVO&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1259, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Renovacion' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Renovacion' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="4546cfe4-ca04-4058-a484-39cce3eefbb4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK1SURBVHhe7Zy/btswEIf7wF07dvGYLWM2LX6JDB7yAAWMNAJio40RZEgCpP/SZvSVRx2pO5IS2FoZYv0+QIgpihTF+3TUwrwjACopyrLf7+UXmCND8TeyPH3/Sddfbulqs6NPnzc4Znq0mxu6/npLTz9+iRkdURYWZbu7o+c/L3IGzJnn3y/eBy1MlIUzCkQBGhaGM0zAy8Jr1JVLPQCktNtd/IaJmYXXKgBStBeQBYwCWUA1kAVUA1lANZAFVANZQDUHyPJI5ycf6f0HfSxpLbVvjXXjxt+0UtK0dOaebbF6lPJ8OViWs0spOvyEn1zQvZSPgXVzSucPUpg5k8pCDxe0eMPZJaeltX6+mfPKsnQpPCxTOpXfr0592vfZqFCfL3PqDb9c5hlMnfN9x3bJGNN+dRuzDNmx2yU2PLu+5vgz0ISydOU+4N1E9vVc7ic0BDTWc7BjvQRUB8/Xh4DZvuxY3O+mF8nfJ4qVjtEtM6uSLN3YM7mTfrRAx7gEpxwsS//mJW9W4e3nCQ8BsMFhVMCLy5mqd3BwYjDHlj9dV8pIghlP8TotqB2L5+iW4JzJMot986QcRVKHBGRUloGgZoLINdyXzgJdFtL37YKY37NH15Wv088LWaZdhjhgA4FhRmUZmHiWxd6P3/TwV06nok2WWfR91FgDkGWMoQkLE5p+s1hGZZHfpt5nCxsM7mPRLGOGCed0O1+O7fJvkUO+WSCL479lcZjg+AnUy0GfAdKg5v2JMLFtIRDSvx1DF+jQzstk2tr6MIZ8PMl1JtNAln+UBcwNyAKqgSygGsgCqoEsoBrIAqrJZOF9IbxlEYAU9iLbN8Q7z3gHGgCB4o5Ehve0bm/uIAzw+L3Ozodvpb3ODAvDJvFWVl6rcMzzCP9FQYvCGFkCQ/+fA8yDofgXZQEgh+gvTW7lQbtmaoIAAAAASUVORK5CYII=" InformativeScreenshot="8fc5820ed741c9464bf84ed68cc2ecbe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                                                 <uix:TargetAnchorable.Anchors>
@@ -770,12 +818,106 @@
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_54">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Sequence_826">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="2" DisplayName="Escribir en 'INPUT Oficina'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_39" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUCURSAL&quot;).ToString]" Timeout="30" Version="V1">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="542, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Oficina' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Oficina' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="e535eb5a-fd70-4924-be1c-146a92926a9f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVHhe7Zy/bsIwEIf7wF07sjCyMbKx8BIMDDxAJUSJBKgFIQaoRP/RMnLNOU5kLrYxMaqK8vskixg7TiR/uvNyuSMAArHKcjwe9RWoI679P5Fl9/5J0+cVTWZLenyaodW0JbMFTV9WtPv40mZkFLKwKPPlmvY/B/0PqDP774PywRSmkIUjCkQBJiwMR5gcJQvnqEkaegCQJPNlcYYpIgvnKgAkpheQBXiBLCAYyAKCgSwgGMgCgoEsIJh4WbZDaj406N5onbEeMynmtamf8HX6u9VjLtQ9AfPAnxAny7hnkSOhDkvRTXSfeaV+yyERuBkiZMmksAvAY2ZEkH1wi1SXhaNKa0gb3ZWMug1qDl7LaUrdY5FHR6m8ZRKa8/LolEmazfOvoZ4PrkZlWTaDtkg1p5yOn4k0apN7NNJdFqzvkMWcx0Kawo66xhpyTRDNP5DFd545M09FLZcQ8pkglsqyBKchhU8W36ZeKItMeZDlqlSXJXiTGV//SpGlFGV87weqECFLijoXyA3hTZKHS58sOmWJCOE6szhlkZHO+m4ghjhZmFLot0UJvyxMJoxMHxfIoseLNdLDrnwGiCNeFlAbIAsIBrKAYCALCAaygGAgCwimJAvXhXDJIgAS9qJUN8SVZ1yBBkCOtSKR4ZrW+WINYYBC1TqnPrzZap0ZFoZN4lJWzlVo9Wz5VxRMUZgTWXJc3+cA9cC1/1ZZAChD9Au3VFoPd+Ek+QAAAABJRU5ErkJggg==" InformativeScreenshot="b63cc72d063861cea6ffc9761004e74b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="312, 222, 163, 42" ElementType="Button" FullSelectorArgument="&lt;webctrl id='home-tab' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='home-tab' tag='BUTTON' type='button' class='nav-link active' aaname='Cargar expediente' check:innerText='Cargar expediente' /&gt;" Guid="c80727a8-9dd2-488e-8df8-5833aabb1e8f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAuCAYAAABNqQn8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO/SURBVHhe7ZjPTtwwEIf7er31xmtw4sJbcNkDz4GQeIsV4kpL/9AFVAmpsO2h4Hrisdcez25M2IRZ9PskizpxxvbMFwf6wQFgFMgJzFLI+bj8634s7tyXbz/d5ddrNLRJGvlG3pF/OUnOx+Ufd/V94X4/LN2/pye+CsD4kG/k3eXVdedhJMlJ5j48LrkHwPSQf+RhJMn52R+tT8/P3ANgesg/8jCS5KRvPwBvTe4h5ASmgJzALJATmAVyArNATmAWyAnMAjmBWSAnMAvkBGaBnMAskPMdMJ/tuY+zC+5x/+DMLbi/q0wk54U7+uQTVrRjN+e74HVAzoEsTg+9iIfu5IYvMPNZfQ0MQ8o5DuGAOTrn7gSMK+f5MU7ICYCcL+bWnRzsuf3TW+5vQn72S6Fj8ruf/v4qpngujikKtTl2eoG6n/7+hs9h+AqsYq0KxXMo84a1rnJRxlBe3Jszt5/uy5hE/541Wdev3RNzIOZOY2JutHueWJfQtvdFHE/ObqNtC12cHhfjus1mksTNl29tXvxAKkBWmL7YKfGVBCVd7Pw5LmRak9hvKUiQk+bJ1xv2lQla5YyfS3Ha9lzO3bB25cUMcfOXJ8xd1qCeK8TajqAjy6mcDC3EN5m7lVCeKuFMlSyJiN2WTCpMPUbOlfpyjkqySFlwej4XryOL1brnst+wdjUHUkZFTrXGL/libsbEyUmkEyA1IacorFpIjzZ2U+xaJAU+acoY3Iq5QgHpennCrCtYfp0FzmOnFtbXuuei37J2NQcNcnbPKXF9sy2nthkVLmh+IohkacK1Fao/drucPWM6VoINlXNTvtr2LPota3+NnMpJvi1GlJOT1Ld4LTHimkw+ocdmOeLYhtjqmIq2F607oWnuKuYaOcXXRdtnTtOePWWchrWrOWiQU6x/24wqZ0qcUvz0/5zVBkMS8mfUonXPlQVPn+84tiF2m5y8BjGu+GOrixPnksLEPOTF5WvVqV4LcBT32LJnj8xX29plDqSMYb3lC6bswTOf9eezhZHlDNS/8/mWJa+87zcmkqXKSXCx4rOUODm2L3arnEQoctbiPIo05bVY2Iskade0rwoLumpibQ171vK1du1Ek5yebG3VSxbj+lYKPJxJ5JwSrTBvj3bqgD7emZzK224CyDmE3ZWTPm/FCan//mMDyDmEHT454x83WTMpJgE5h7DDcoL3DuQEZoGcwCyQE5gFcgKzQE5gFsgJzAI5gVkgJzAL5ARmUeW8+3XP/wLg7SAPSVBqSU4ArAE5gVGc+w8l5laLoV0IswAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NTypeInto>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Ramo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_40" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;C_RAMO&quot;).ToString]" Timeout="30" Version="V1">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="701, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="48605910-a0b2-4853-a501-738f666cb8bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIESURBVHhe7Zy9bsIwFEb7wF0ZuzCyMWZj4SUYGHiAShUlEqAWhBgAif7RMnLr69jBdq6oBQmVyHckSwQ7WXzyXS83dwRAJKIsh8PB/AJ1RXLAk2X7/knjlwWNJnN6fJ5g1HikkxmNXxe0/fgydjiysCjT+ZJ2P3vzD6g7u++9dsIKk8vCiQJRQAgLwwnDaFm4Po1U7AAgkU7n2pE8WbhOASBh3YAs4E8gC4gGsoBoIAuIBrKAaCALiOZ8WYZdum88eKPZ35hJcItcJktrQCtzSesBNZUwydBcg5ujPFkUTx2kyy1ToSwb6rXcMtWlJzNDlFLSaFNvmKXRsYTx/9J6xp2T5kHVlCeLPsM4G6jKUhKIcxTJbLy935Sw4/3yeje1Vv12QVZQLZfJkr/lanRSMyGjNzdfY5JlbS4LcgTrhRQrPgNUTUnJkr354eGWy5IsVHGjea17vyuLL5olEwwH6utRkiyKoAyFh93TyXJaFjlZWBYkyzUpTxaFThK9weFbn12fLYtJLpxZ/pdSZfE2VSeNLUFtSjoXJIsme3b+TIhydc6XBdQOyAKigSwgGsgCooEsIBrIAqLxZOGeEG5XBECC3fD6hrjrjLvPAHApdCQy3M86nS0hDMjRvc7Kibew15lhYdgibmXlOoVR32G/omBFYTxZLNK3OUC9kBwQZQGgCNEv9aB47DTYdZcAAAAASUVORK5CYII=" InformativeScreenshot="7204a39a74837e797fc32de00a333f1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="542, 280, 135, 31" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="434b68f8-11e8-4dd3-a55e-d9b820b2c328" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVHhe7Zy/bsIwEIf7wF07sjCyMbKx8BIMDDxAJUSJBKgFIQaoRP/RMnLNOU5kLrYxMaqK8vskixg7TiR/uvNyuSMAArHKcjwe9RWoI679P5Fl9/5J0+cVTWZLenyaodW0JbMFTV9WtPv40mZkFLKwKPPlmvY/B/0PqDP774PywRSmkIUjCkQBJiwMR5gcJQvnqEkaegCQJPNlcYYpIgvnKgAkpheQBXiBLCAYyAKCgSwgGMgCgoEsIJh4WbZDaj406N5onbEeMynmtamf8HX6u9VjLtQ9AfPAnxAny7hnkSOhDkvRTXSfeaV+yyERuBkiZMmksAvAY2ZEkH1wi1SXhaNKa0gb3ZWMug1qDl7LaUrdY5FHR6m8ZRKa8/LolEmazfOvoZ4PrkZlWTaDtkg1p5yOn4k0apN7NNJdFqzvkMWcx0Kawo66xhpyTRDNP5DFd545M09FLZcQ8pkglsqyBKchhU8W36ZeKItMeZDlqlSXJXiTGV//SpGlFGV87weqECFLijoXyA3hTZKHS58sOmWJCOE6szhlkZHO+m4ghjhZmFLot0UJvyxMJoxMHxfIoseLNdLDrnwGiCNeFlAbIAsIBrKAYCALCAaygGAgCwimJAvXhXDJIgAS9qJUN8SVZ1yBBkCOtSKR4ZrW+WINYYBC1TqnPrzZap0ZFoZN4lJWzlVo9Wz5VxRMUZgTWXJc3+cA9cC1/1ZZAChD9Au3VFoPd+Ek+QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NTypeInto>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Poliza'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_41" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;POLIZA_NUEVA&quot;).ToString]" Timeout="30" Version="V1">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="861, 280, 215, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="25bf9930-54da-41cf-9ea0-18be71fdd14d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANsAAAAjCAYAAAAdQn80AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVHhe7d27TgJBFIBhH5jW0saSjpKOhpewoOABTAxKIkQhxAJI8IZactyzs7vMwK7cZkfQ/0smYZFL458zUAxnAiCI3NgWi0VyC8CuivpxYpu9vMn9w0juekO5vu2xWKw9Vrc3kPvHkcxe35OyjCw2Da0/fJL551dyD4B9zT++4p7s4LLYdKIRGuCPBqcTLhXHpnvMu2j0AfCr2x9mn+GyyaZ7TQB+2V0RG1AiYgMCITYgEGIDAiE2IBBiAwLZP7ZJWy7PL6RircvWNPnjJlO5ql5IvWOuxq2aVKptGZtL4E86MLam3CSXIl2pbx2cGxvwH3iMLdJpSqXRTS5+Qmz4f7zGFm8Hs9jMpFtuM+3HrsSmkSbbyPg1nOdFq+g12XrihHiMzYRgAlrfUrqfy4pjc6y+R/S45TS03w84fgfGZk0Z+x8/Nx6NoyZXE729TWybt5o3jV2+lAF+l8fJtuRuJ1N2PJtjyw/JPM8OnNhwKkqJrXhSbTnZtpx0TDacknJiO+QzW/y6aZQ2exuq1t8DOGYlxaZMDNmWz5lURbGZ++1tov1c95vKptSZbDgh+8cGYCfEBgRCbEAgxAYEQmxAIMQGBLIWm55rp0cmA/BLu1o7N1JPbtUTXAH4kXsistIzyfuDJ4IDPIjP+o96es47619pcFqiHkWue00Wi7X7Sn/Fxg5NObGlin5fCsBmRf3kxgbAN5FvNsO6eDgllGwAAAAASUVORK5CYII=" InformativeScreenshot="6fcf4bebdbcb95374dc45282c6e48ac3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="701, 280, 135, 31" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Ramo' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="10079c19-17bf-4f82-8d7c-6b2e300dbba4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIESURBVHhe7Zy9bsIwFEb7wF0ZuzCyMWZj4SUYGHiAShUlEqAWhBgAif7RMnLr69jBdq6oBQmVyHckSwQ7WXzyXS83dwRAJKIsh8PB/AJ1RXLAk2X7/knjlwWNJnN6fJ5g1HikkxmNXxe0/fgydjiysCjT+ZJ2P3vzD6g7u++9dsIKk8vCiQJRQAgLwwnDaFm4Po1U7AAgkU7n2pE8WbhOASBh3YAs4E8gC4gGsoBoIAuIBrKAaCALiOZ8WYZdum88eKPZ35hJcItcJktrQCtzSesBNZUwydBcg5ujPFkUTx2kyy1ToSwb6rXcMtWlJzNDlFLSaFNvmKXRsYTx/9J6xp2T5kHVlCeLPsM4G6jKUhKIcxTJbLy935Sw4/3yeje1Vv12QVZQLZfJkr/lanRSMyGjNzdfY5JlbS4LcgTrhRQrPgNUTUnJkr354eGWy5IsVHGjea17vyuLL5olEwwH6utRkiyKoAyFh93TyXJaFjlZWBYkyzUpTxaFThK9weFbn12fLYtJLpxZ/pdSZfE2VSeNLUFtSjoXJIsme3b+TIhydc6XBdQOyAKigSwgGsgCooEsIBrIAqLxZOGeEG5XBECC3fD6hrjrjLvPAHApdCQy3M86nS0hDMjRvc7Kibew15lhYdgibmXlOoVR32G/omBFYTxZLNK3OUC9kBwQZQGgCNEv9aB47DTYdZcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NTypeInto>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Endoso'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_42" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;T_ENDOSO&quot;).ToString]" Timeout="30" Version="V1">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1100, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="74e1b423-57f4-451c-aceb-82f9404bff70" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVHhe7Zw9b8IwEIb7g1k7dmFkY2Rj4U8wMPADKiHaSIBaEGKASvS7jFxz/uLiOGCSViDlfSRLSRzHkfzozhkuNwRAJEFZ9vu9OQJ1pGj9M7Js3z5o8rSkx+mC7h+maDVtyXROk+clbd8/jRkaJwuLMlus6OtnZ66AOvP1vVM+SGGcLBxRIAqQsDAcYSxKFs5Rj2noAcAnmS3cHsZFFs5VAPhILyALOApkAdFAFhANZAHRQBYQDWQB0ZSXZTOk5u0dNWRrDWltus9lPWhTo5uYM3CNVJSlRyNzWhXIcv1AFhDN/8gy7qmUNGIBbIryReB7XArrUT8nS0Id16/vkXMpuYJ9L9RvyXFt6m9MF6hERVnkotxRc/Ci+4wI7tzc2xnrU90vFtg+y8miRXHjU5Qcdk/kizpOzLERRUrnzwVK86+RRW52R93D4stjSyYNBcZrgUyUUHMHIkbwnbRATlRQmgvIEl48KUt4/+KNU/PriJaJWDnJwnKC87mayMLXjkcWliW0/9ApSwlT8E78bESW6lxEFr05FWNtlHDR5MSeJX3+YfFlxNHHmajE71L0nuAsKsqi08ChmUU5IQujhTHj0nvVl1Mm9XhfQ/J53tzZKGWEcf0Q5a8oLwuoHZAFRANZQDSQBUQDWUA0kAVEk5OF60K4ZBEAH/YiVzfElWdcgQaAJViRyHBN62y+gjBAoWqdUx9eQ7XODAvDJnEpK+cqtHo2+xcFKQqTkcVS9H8OUA+K1j8oCwB5iH4BcXpQ2w8LDTIAAAAASUVORK5CYII=" InformativeScreenshot="6fd523ba177727dfe8642394105d0db8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="861, 280, 215, 31" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Poliza' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="789e62ef-5842-4949-abfe-5df4ee2f6d00" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANsAAAAjCAYAAAAdQn80AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVHhe7d27TgJBFIBhH5jW0saSjpKOhpewoOABTAxKIkQhxAJI8IZactyzs7vMwK7cZkfQ/0smYZFL458zUAxnAiCI3NgWi0VyC8CuivpxYpu9vMn9w0juekO5vu2xWKw9Vrc3kPvHkcxe35OyjCw2Da0/fJL551dyD4B9zT++4p7s4LLYdKIRGuCPBqcTLhXHpnvMu2j0AfCr2x9mn+GyyaZ7TQB+2V0RG1AiYgMCITYgEGIDAiE2IBBiAwLZP7ZJWy7PL6RircvWNPnjJlO5ql5IvWOuxq2aVKptGZtL4E86MLam3CSXIl2pbx2cGxvwH3iMLdJpSqXRTS5+Qmz4f7zGFm8Hs9jMpFtuM+3HrsSmkSbbyPg1nOdFq+g12XrihHiMzYRgAlrfUrqfy4pjc6y+R/S45TS03w84fgfGZk0Z+x8/Nx6NoyZXE729TWybt5o3jV2+lAF+l8fJtuRuJ1N2PJtjyw/JPM8OnNhwKkqJrXhSbTnZtpx0TDacknJiO+QzW/y6aZQ2exuq1t8DOGYlxaZMDNmWz5lURbGZ++1tov1c95vKptSZbDgh+8cGYCfEBgRCbEAgxAYEQmxAIMQGBLIWm55rp0cmA/BLu1o7N1JPbtUTXAH4kXsistIzyfuDJ4IDPIjP+o96es47619pcFqiHkWue00Wi7X7Sn/Fxg5NObGlin5fCsBmRf3kxgbAN5FvNsO6eDgllGwAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NTypeInto>
+                                            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="TOMAR EL SUFIJO DEL MENSAJE DE LA POLIZA NUEVA Y PONERLO EN ESTE CAMPO. Y SI ES POLIZA IICIAL SE CONSIDERA COMO 1." ClickBeforeMode="Single" DisplayName="Escribir en 'INPUT Renovacion'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="NTypeInto_43" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SUFIJO_NUEVO&quot;).ToString]" Timeout="30" Version="V1">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1259, 280, 135, 31" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Renovacion' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Renovacion' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="4546cfe4-ca04-4058-a484-39cce3eefbb4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK1SURBVHhe7Zy/btswEIf7wF07dvGYLWM2LX6JDB7yAAWMNAJio40RZEgCpP/SZvSVRx2pO5IS2FoZYv0+QIgpihTF+3TUwrwjACopyrLf7+UXmCND8TeyPH3/Sddfbulqs6NPnzc4Znq0mxu6/npLTz9+iRkdURYWZbu7o+c/L3IGzJnn3y/eBy1MlIUzCkQBGhaGM0zAy8Jr1JVLPQCktNtd/IaJmYXXKgBStBeQBYwCWUA1kAVUA1lANZAFVANZQDUHyPJI5ycf6f0HfSxpLbVvjXXjxt+0UtK0dOaebbF6lPJ8OViWs0spOvyEn1zQvZSPgXVzSucPUpg5k8pCDxe0eMPZJaeltX6+mfPKsnQpPCxTOpXfr0592vfZqFCfL3PqDb9c5hlMnfN9x3bJGNN+dRuzDNmx2yU2PLu+5vgz0ISydOU+4N1E9vVc7ic0BDTWc7BjvQRUB8/Xh4DZvuxY3O+mF8nfJ4qVjtEtM6uSLN3YM7mTfrRAx7gEpxwsS//mJW9W4e3nCQ8BsMFhVMCLy5mqd3BwYjDHlj9dV8pIghlP8TotqB2L5+iW4JzJMot986QcRVKHBGRUloGgZoLINdyXzgJdFtL37YKY37NH15Wv088LWaZdhjhgA4FhRmUZmHiWxd6P3/TwV06nok2WWfR91FgDkGWMoQkLE5p+s1hGZZHfpt5nCxsM7mPRLGOGCed0O1+O7fJvkUO+WSCL479lcZjg+AnUy0GfAdKg5v2JMLFtIRDSvx1DF+jQzstk2tr6MIZ8PMl1JtNAln+UBcwNyAKqgSygGsgCqoEsoBrIAqrJZOF9IbxlEYAU9iLbN8Q7z3gHGgCB4o5Ehve0bm/uIAzw+L3Ozodvpb3ODAvDJvFWVl6rcMzzCP9FQYvCGFkCQ/+fA8yDofgXZQEgh+gvTW7lQbtmaoIAAAAASUVORK5CYII=" InformativeScreenshot="8fc5820ed741c9464bf84ed68cc2ecbe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target DesignTimeRectangle="1100, 280, 135, 31" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Endoso' tag='INPUT' type='text' class='form-control form-control-sm' aaname='' /&gt;" Guid="90f42d1d-a226-4878-8b70-3a40932eede3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAjCAYAAACkVvl8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVHhe7Zw9b8IwEIb7g1k7dmFkY2Rj4U8wMPADKiHaSIBaEGKASvS7jFxz/uLiOGCSViDlfSRLSRzHkfzozhkuNwRAJEFZ9vu9OQJ1pGj9M7Js3z5o8rSkx+mC7h+maDVtyXROk+clbd8/jRkaJwuLMlus6OtnZ66AOvP1vVM+SGGcLBxRIAqQsDAcYSxKFs5Rj2noAcAnmS3cHsZFFs5VAPhILyALOApkAdFAFhANZAHRQBYQDWQB0ZSXZTOk5u0dNWRrDWltus9lPWhTo5uYM3CNVJSlRyNzWhXIcv1AFhDN/8gy7qmUNGIBbIryReB7XArrUT8nS0Id16/vkXMpuYJ9L9RvyXFt6m9MF6hERVnkotxRc/Ci+4wI7tzc2xnrU90vFtg+y8miRXHjU5Qcdk/kizpOzLERRUrnzwVK86+RRW52R93D4stjSyYNBcZrgUyUUHMHIkbwnbRATlRQmgvIEl48KUt4/+KNU/PriJaJWDnJwnKC87mayMLXjkcWliW0/9ApSwlT8E78bESW6lxEFr05FWNtlHDR5MSeJX3+YfFlxNHHmajE71L0nuAsKsqi08ChmUU5IQujhTHj0nvVl1Mm9XhfQ/J53tzZKGWEcf0Q5a8oLwuoHZAFRANZQDSQBUQDWUA0kAVEk5OF60K4ZBEAH/YiVzfElWdcgQaAJViRyHBN62y+gjBAoWqdUx9eQ7XODAvDJnEpK+cqtHo2+xcFKQqTkcVS9H8OUA+K1j8oCwB5iH4BcXpQ2w8LDTIAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NTypeInto>
+                                          </Sequence>
+                                          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_54">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_786">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -807,7 +949,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_55">
+                                          <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_55">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_787">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -841,7 +983,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_63">
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_63">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_812">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -875,7 +1017,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_64">
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_64">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_813">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -909,7 +1051,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_65">
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_65">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_814">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -943,7 +1085,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_67">
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_67">
                                             <ui:CommentOut.Body>
                                               <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="450,301" sap2010:WorkflowViewState.IdRef="Sequence_821">
                                                 <sap:WorkflowViewStateService.ViewState>
@@ -977,7 +1119,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:CommentOut>
-                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Correo del Agente'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="451.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_35" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;CorreoAgente&quot;).ToString]" Timeout="30" Version="V1">
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Correo del Agente'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="452,251" sap2010:WorkflowViewState.IdRef="NTypeInto_35" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;CorreoAgente&quot;).ToString]" Timeout="30" Version="V1">
                                             <uix:NTypeInto.Target>
                                               <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1154, 393, 304, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control' aaname='' /&gt;" Guid="aba3be40-8d07-4eaf-8143-dcbce32d4891" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATQAAAAqCAYAAAA9KqfAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPaSURBVHhe7Zm7ThtBFEDzwWlT0lDSUdK54ScoKPiASIjIQkFIiAJhRA3IFJO982LnsbNre7F3J+dIV5F3Zu887Hs0Q34oAIBKQGgAUA2B0NbrT/W0elXLuwf1+89fgiCISYY4SlwlzmrjhSYNt/ePutPb+4d9CgAwPcRR4ipxVltqXmjSKAEAMBdib3mhyRGOkxkAzAlxlrjL4YUm91IAgLnRdhdCA4BZg9AAoBoQGgBUA0IDgGpAaABQDQgNAKoBoQFANSA0AKgGhLYTL+ri5EgdX77Yz4diqc5+HamzG/txE1ZX6njbdwEmxjcJzRTYzyDO1bVtrYdpCO16scMcEBpUxOhCe748beR1qi5W9oHlepE+mz9jC22Lk5YI6eRKPduPAP8z4wrt5rzSk1gXUxDaCzIDsIwotA2LW8uvdSWNTxlOjq6fbndjLPW/8twXv706+XyLpW1wmHd9exODxFHMm1tzdN3OnZ5ya4+fNWHmV1hz3x7qucvJOJxTMF/fx37WlPfKnMJb7cleAxyG8YSWLYw8uWup/B0oON25Ys0IJLnSJmPbfv5dW9DtXFZURQH35nWycTnSE5ZeV0s06dqbHAvXnjuh5dc8aA/tGtN9bb2XrDGzV807bk7JGG5+OXED7JmRhdb+oXeRK1oheh4XniYWiiH7R3H9vpmPLv5MwXU9d/TljYWm80VzC4XRtXZHQWhB3oF7aIWWy+fXFQmtuCeJ/CxdzwH2zP5PaLpfXnyBQAJxOKJi1NiCbwo3DfN+VkxCYS5D8sbzMaeXXNh9KY4ndAstmP/QPcx+J1G+qE/nXgnynWRlZ3KmggXYL+MJrff0YRlajBsKrTTuLkIrryecT1EGQnE8AaEB7MKIQjPFULrCGQZelwYLzY4bX/Va7HLlLOWN59OXr1/6A4U2dA+3EBpXTpgzowrNFUsqIpFDVDRRASQy3EBopm9U4E2Rnfl+ptADOekiLMmloTdvTg4Z+bTGTdfe5PD/KZBbX37Ng/YwK5rcnNt9MnvV7IPbAz1G8L2YfGXxA+yHkYVmMMUmP/xWRD/4pE9cEJsITbDy+Yr4XVuoPuJC76CYNzMfK7XSOPHag/db4xmJdK+5dw+3EpoQ71W4l0ZqX5H9PgAOwLcIDQDgECA0AKgGhAYA1YDQAKAaEBoAVANCA4BqQGgAUA0IDQCqAaEBQDVkhba8e1Bv7x/2EwDA9BFnibscXmhPq1cdAABzIfaWF9p6/alu7x91Iyc1AJgy4ihxlThL3OXwQhOkQTrJEU7upQRBEFMMcZS4qi0zIRAaAMCcQWgAUAlK/QMbJtW6Izmm4AAAAABJRU5ErkJggg==" InformativeScreenshot="45d7673ac7d7ffd27e433c3f8723fef9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete">
                                                 <uix:TargetAnchorable.Anchors>
@@ -994,15 +1136,15 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </uix:NTypeInto>
-                                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="451.2,833.6" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,835" sap2010:WorkflowViewState.IdRef="TryCatch_20">
                                             <TryCatch.Try>
-                                              <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="449.6,301.6" sap2010:WorkflowViewState.IdRef="Sequence_824">
+                                              <Sequence DisplayName="Intentar" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_824">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Enviar copia de correo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_36" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;CorreoSuscriptor&quot;).ToString]" Timeout="10" Version="V1">
+                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Enviar copia de correo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_36" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;CorreoSuscriptor&quot;).ToString]" Timeout="10" Version="V1">
                                                   <uix:NTypeInto.Target>
                                                     <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1154, 479, 304, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='AddMail' tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl id='AddMail' tag='INPUT' type='email' class='form-control' aaname='' /&gt;" Guid="0c4728ed-5d84-407b-b423-708883112855" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATQAAAAqCAYAAAA9KqfAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQLSURBVHhe7Zk9SxxBGIDzS/JH8i9S5h8E0gbSCMEmYCpLu2skZXoLC39AQAyHRASxEM8IaYLKWUz2nS93Z2Zn97z1bm/yPPAiu/M9d+/DzPlKAQAUAkIDgGJoCG0+f1RXs1s1PbtQP37+IgiCGGWIo8RV4qw6XmhScHp+qSvd3T/YtwAA40McJa4SZ9Wl5oUmhRIAAJtC6C0vNDnCcTIDgE1CnCXucnihyb0UAGDTqLsLoQHARoPQAKAYEBoAFANCA4BiQGgAUAwIDQCKAaEBQDEgNAAoBoS2FDfqYGdLbR/e2Od1MVV7H7fU3ol9XITZkdp+bluAkfFCQjMJ9qER++rYlpbDOIR2PFliDggNCmJwoV0f7lby2lUHM/vCcjyJ320+QwvtGSctEdLOkbq2jwD/M8MK7WS/0JNYG2MQ2g0yA7AMKLQFk1vLr3YlDU8ZTo6uni53Y0z1X3nvk99enXx/k6ktcJi2vryKXuLI9ptac3DdTp2eUmsP31Vh5pdZc9ce6rnLybg5p8Z8fR37rMnvlTmF18qjvQZYD8MJLZkYaVLXUvkdqHG6c8maEEh0pY3GtvV8W5vQ9b6sqLIC7uzXycb1EZ+w9LpqoonXXvUxceWpE1p6zb320K4x3tdau2iNib2q2rg5RWO4+aXEDbBiBhZa/YveRippheB9mHiaUCiG5I/iur2Zj07+RMK1vXd09RsKTfcXzK0pjLa1OzJCa/Tbcw+t0FL9+XUFQsvuSSQ/S9t7gBWz+hOarpcWX0MgDXE4gmTU2ISvEjcO0z4pJiEzlz79hvMxp5dU2H3Jjie0C60x/757mPxMgv6COq17JchnkpSd6TMWLMBqGU5onacPS99kXFBouXGXEVp+Pc35ZGUgZMcTEBrAMgwoNJMMuSucoed1qbfQ7LjhVa/GMlfOXL/hfLr665Z+T6H13cNnCI0rJ2wygwrNJUssIpFDkDRBAkQyXEBopm6Q4FWS7fl6JtEbctJJmJNLRWe/KTkk5FMbN1571Yf/p0Bqfek199rDpGhSc67XSexVtQ9uD/QYjc/F9JcXP8BqGFhoBpNs8sWvRfCFj+qECbGI0AQrn6cI29pE9REmegvZfhPzsVLLjROuvdG+Np6RSPuaO/fwWUITwr1q7qWR2lMkPw+ANfAiQgMAWAcIDQCKAaEBQDEgNAAoBoQGAMWA0ACgGBAaABQDQgOAYkBoAFAMSaFNzy7U3f2DfQIAGD/iLHGXwwvtanarAwBgUwi95YU2nz+q0/NLXchJDQDGjDhKXCXOEnc5vNAEKZBKcoSTeylBEMQYQxwlrqrLTPBC+/3nr3r/9bt6/faLevXmE0EQxKhDXCXOEnc5vNDeff6WbEQQBDHmEHcZlPoHOPVt6fpALJkAAAAASUVORK5CYII=" InformativeScreenshot="4d0d90444757002f626d5b0640397423.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete">
                                                       <uix:TargetAnchorable.Anchors>
@@ -1027,13 +1169,13 @@
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Captura" sap:VirtualizedContainerService.HintSize="449.6,301.6" sap2010:WorkflowViewState.IdRef="Sequence_823">
+                                                  <Sequence DisplayName="Captura" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_823">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Enviar copia de correo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SuscriptorCorreo&quot;).ToString]" Timeout="30" Version="V1">
+                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Enviar copia de correo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="d04b659b-b9e2-4a8c-ac8f-a4fb624cd811" Text="[CurrentRowRamo74(&quot;SuscriptorCorreo&quot;).ToString]" Timeout="30" Version="V1">
                                                       <uix:NTypeInto.Target>
                                                         <uix:TargetAnchorable BrowserURL="https://ewsp.gmx.com.mx/GEDIV2/MainApp.aspx" DesignTimeRectangle="1154, 479, 304, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='AddMail' tag='INPUT' type='email' /&gt;" FuzzySelectorArgument="&lt;webctrl id='AddMail' tag='INPUT' type='email' class='form-control' aaname='' /&gt;" Guid="0c4728ed-5d84-407b-b423-708883112855" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATQAAAAqCAYAAAA9KqfAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQLSURBVHhe7Zk9SxxBGIDzS/JH8i9S5h8E0gbSCMEmYCpLu2skZXoLC39AQAyHRASxEM8IaYLKWUz2nS93Z2Zn97z1bm/yPPAiu/M9d+/DzPlKAQAUAkIDgGJoCG0+f1RXs1s1PbtQP37+IgiCGGWIo8RV4qw6XmhScHp+qSvd3T/YtwAA40McJa4SZ9Wl5oUmhRIAAJtC6C0vNDnCcTIDgE1CnCXucnihyb0UAGDTqLsLoQHARoPQAKAYEBoAFANCA4BiQGgAUAwIDQCKAaEBQDEgNAAoBoS2FDfqYGdLbR/e2Od1MVV7H7fU3ol9XITZkdp+bluAkfFCQjMJ9qER++rYlpbDOIR2PFliDggNCmJwoV0f7lby2lUHM/vCcjyJ320+QwvtGSctEdLOkbq2jwD/M8MK7WS/0JNYG2MQ2g0yA7AMKLQFk1vLr3YlDU8ZTo6uni53Y0z1X3nvk99enXx/k6ktcJi2vryKXuLI9ptac3DdTp2eUmsP31Vh5pdZc9ce6rnLybg5p8Z8fR37rMnvlTmF18qjvQZYD8MJLZkYaVLXUvkdqHG6c8maEEh0pY3GtvV8W5vQ9b6sqLIC7uzXycb1EZ+w9LpqoonXXvUxceWpE1p6zb320K4x3tdau2iNib2q2rg5RWO4+aXEDbBiBhZa/YveRippheB9mHiaUCiG5I/iur2Zj07+RMK1vXd09RsKTfcXzK0pjLa1OzJCa/Tbcw+t0FL9+XUFQsvuSSQ/S9t7gBWz+hOarpcWX0MgDXE4gmTU2ISvEjcO0z4pJiEzlz79hvMxp5dU2H3Jjie0C60x/757mPxMgv6COq17JchnkpSd6TMWLMBqGU5onacPS99kXFBouXGXEVp+Pc35ZGUgZMcTEBrAMgwoNJMMuSucoed1qbfQ7LjhVa/GMlfOXL/hfLr665Z+T6H13cNnCI0rJ2wygwrNJUssIpFDkDRBAkQyXEBopm6Q4FWS7fl6JtEbctJJmJNLRWe/KTkk5FMbN1571Yf/p0Bqfek199rDpGhSc67XSexVtQ9uD/QYjc/F9JcXP8BqGFhoBpNs8sWvRfCFj+qECbGI0AQrn6cI29pE9REmegvZfhPzsVLLjROuvdG+Np6RSPuaO/fwWUITwr1q7qWR2lMkPw+ANfAiQgMAWAcIDQCKAaEBQDEgNAAoBoQGAMWA0ACgGBAaABQDQgOAYkBoAFAMSaFNzy7U3f2DfQIAGD/iLHGXwwvtanarAwBgUwi95YU2nz+q0/NLXchJDQDGjDhKXCXOEnc5vNAEKZBKcoSTeylBEMQYQxwlrqrLTPBC+/3nr3r/9bt6/faLevXmE0EQxKhDXCXOEnc5vNDeff6WbEQQBDHmEHcZlPoHOPVt6fpALJkAAAAASUVORK5CYII=" InformativeScreenshot="4d0d90444757002f626d5b0640397423.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='GEDi - Generador de Expediente Digital' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete">
                                                           <uix:TargetAnchorable.Anchors>
@@ -1848,8 +1990,14 @@
                                   <InArgument x:TypeArguments="x:Int32">[Cont + 1]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                            
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 18 por poliza GEDI" sap:VirtualizedContainerService.HintSize="620.8,174" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_18_iteracion_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 18</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument><InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" /></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Panel Endosos - Paso 18 por poliza GEDI" sap:VirtualizedContainerService.HintSize="620.8,174" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_PanelEndosos_18_iteracion_gedi" UnSafe="False" WorkflowFileName="90) CommonFlows\ActualizarPanelEndosos.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_pasoActual_Str">Paso 18</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_finalizarProceso_Str">False</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="i_mensajeError_Str" />
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -1876,14 +2024,14 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="638,483" sap2010:WorkflowViewState.IdRef="Sequence_808">
+                          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_808">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="604,114" sap2010:WorkflowViewState.IdRef="Assign_787">
+                            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_787">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[io_MessageSeq_str]</OutArgument>
                               </Assign.To>
@@ -1891,7 +2039,7 @@
                                 <InArgument x:TypeArguments="x:String">["ERROR: "+Secuencia_str+".No se pudo registrar en el sistema Sii los datos del Asegurado/Contratante. Exception = "+exception.Message.ToString]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign DisplayName="CurrentRowSolicitud(&quot;ESTATUS&quot;)" sap:VirtualizedContainerService.HintSize="604,114" sap2010:WorkflowViewState.IdRef="Assign_789">
+                            <Assign DisplayName="CurrentRowSolicitud(&quot;ESTATUS&quot;)" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_789">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Object">[CurrentRowRamo74("ESTATUS")]</OutArgument>
                               </Assign.To>
@@ -1899,25 +2047,12 @@
                                 <InArgument x:TypeArguments="x:Object">[out_Config("EstatusdDeError").ToString]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="604,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">[io_MessageSeq_str]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">e</InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[out_Config]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
                           </Sequence>
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
                     <TryCatch.Finally>
-                      <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="638.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_819">
+                      <Sequence DisplayName="Finalmente" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_819">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1935,7 +2070,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="681.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_53">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="CommentOut_53">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_776">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2868,7 +3003,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="681.6,48" sap2010:WorkflowViewState.IdRef="CommentOut_42">
+            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="514,48" sap2010:WorkflowViewState.IdRef="CommentOut_42">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,207" sap2010:WorkflowViewState.IdRef="Sequence_727">
                   <sap:WorkflowViewStateService.ViewState>

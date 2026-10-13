@@ -94,9 +94,11 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Workflow para la Emisión de Póliza Casa-Habitación ENDOSOS - GMX&#xA;**27/Abr/23 Nueva Regla para poner registrado por el robot cuando es renovación&#xA;**27/Abr/23 Nueva Regla para ajustar la celda % Extra para la Renovación" DisplayName="Work Flow Global" sap:VirtualizedContainerService.HintSize="1919,978" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Workflow para la Emisión de Póliza Casa-Habitación ENDOSOS - GMX&#xA;**27/Abr/23 Nueva Regla para poner registrado por el robot cuando es renovación&#xA;**27/Abr/23 Nueva Regla para ajustar la celda % Extra para la Renovación" DisplayName="Work Flow Global" sap:VirtualizedContainerService.HintSize="1603,858" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="NewTransaction" />
       <Variable x:TypeArguments="x:String" Name="Workflow_str" />
@@ -423,7 +425,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">615,80 514.8,80 514.8,216.4</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="1) Procesamiento de Correos de Solicitud" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_62">
+              <Sequence DisplayName="1) Procesamiento de Correos de Solicitud" sap:VirtualizedContainerService.HintSize="484,965" sap2010:WorkflowViewState.IdRef="Sequence_62">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -510,13 +512,13 @@
                           <av:PointCollection x:Key="ConnectorLocation">620,310.6 514.8,310.6 514.8,366.4</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="2 Registra Datos en Sii" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                      <Sequence DisplayName="2 Registra Datos en Sii" sap:VirtualizedContainerService.HintSize="486,1172" sap2010:WorkflowViewState.IdRef="Sequence_63">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Workflow_str" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_33">
+                        <Assign DisplayName="Workflow_str" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_33">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Workflow_str]</OutArgument>
                           </Assign.To>
@@ -524,7 +526,7 @@
                             <InArgument x:TypeArguments="x:String">["2) Registro de Información en el Sii"]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="452,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["INI: "+Workflow_str.ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
@@ -537,7 +539,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <If Condition="[Configuracion(&quot;EjecutarModulo2&quot;).ToString.Equals(&quot;S&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="434,524" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[Configuracion(&quot;EjecutarModulo2&quot;).ToString.Equals(&quot;S&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="452,532" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -545,14 +547,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,303" sap2010:WorkflowViewState.IdRef="Sequence_40">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="**27/Abr/23 Nueva Regla para ajustar la celda % Extra para la Renovación" DisplayName="Invoke 2.1) RegistroDeInformacionEnElSii workflow" sap:VirtualizedContainerService.HintSize="382,237" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="2) Registro de Información en el Sii\2.1) RegistroDeInformacionEnElSii.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="**27/Abr/23 Nueva Regla para ajustar la celda % Extra para la Renovación" DisplayName="Invoke 2.1) RegistroDeInformacionEnElSii workflow" sap:VirtualizedContainerService.HintSize="416,243" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="2) Registro de Información en el Sii\2.1) RegistroDeInformacionEnElSii.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Configuracion]</InOutArgument>
                                   <InOutArgument x:TypeArguments="x:String" x:Key="io_MessageSeq_str">[AllMensaje_str]</InOutArgument>
@@ -571,7 +573,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_41">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -580,7 +582,7 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["FIN: "+Workflow_str.ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
@@ -614,14 +616,14 @@
                                   <av:PointCollection x:Key="ConnectorLocation">615,450 585,450 585,516.4 544.8,516.4</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="3) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                              <Sequence DisplayName="3) GeneradorDeExpedienteDigital" sap:VirtualizedContainerService.HintSize="520,1587" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="3 Consultar Documentos WEB" />
-                                <Assign DisplayName="Workflow_str" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="486,123" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="3 Consultar Documentos WEB" />
+                                <Assign DisplayName="Workflow_str" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="Assign_34">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Workflow_str]</OutArgument>
                                   </Assign.To>
@@ -629,7 +631,7 @@
                                     <InArgument x:TypeArguments="x:String">["3) Generador De Expediente Digital"]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="452,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="486,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["INI: "+Workflow_str.ToString]</InArgument>
                                     <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
@@ -642,7 +644,26 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:InvokeWorkflowFile>
-                                <If Condition="[Configuracion(&quot;EjecutarModulo3&quot;).ToString.Equals(&quot;S&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="452,487" sap2010:WorkflowViewState.IdRef="If_3">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,337" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[ArchivoSolicitudesDelDia_str]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">["C:\uipath\RIBA24GMXcmx01_Endosos\ArchivosDeSolicitudes\Solicitudes_01092026_2214.xlsx"]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                </ui:CommentOut>
+                                <If Condition="[Configuracion(&quot;EjecutarModulo3&quot;).ToString.Equals(&quot;S&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="486,487" sap2010:WorkflowViewState.IdRef="If_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -677,7 +698,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ManejoDeMensajesErrores" sap:VirtualizedContainerService.HintSize="486,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="90) CommonFlows\ManejoDeMensajesErrores.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InArgument x:TypeArguments="x:String" x:Key="i_Mensaje_str">["FIN: "+Workflow_str.ToString]</InArgument>
                                     <InArgument x:TypeArguments="x:String" x:Key="i_TipoMensaje">i</InArgument>
