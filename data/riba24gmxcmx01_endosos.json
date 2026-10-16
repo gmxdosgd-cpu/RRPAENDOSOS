@@ -1,11 +1,11 @@
 ﻿{
   "processName": "RIBA24GMXcmx01_Endosos",
-  "startedAt": "2026-10-13 14:12:40",
-  "durationSeconds": 550,
-  "durationLabel": "00:09:10",
-  "completedAt": "2026-10-13 14:21:50",
-  "lastUpdated": "14:21:50",
-  "lastDatabaseUpdate": "14:21:50",
+  "startedAt": "2026-10-16 14:49:03",
+  "durationSeconds": 68,
+  "durationLabel": "00:01:08",
+  "completedAt": "",
+  "lastUpdated": "14:50:11",
+  "lastDatabaseUpdate": "14:50:11",
   "errorMessage": "",
   "steps": [
     {
@@ -13,21 +13,21 @@
       "step_name": "Inicializar configuracion del robot",
       "status": "Finalizado",
       "description": "Lee Config.xlsx y deja listas las variables del panel.",
-      "updated_at": "14:12:42"
+      "updated_at": "14:49:04"
     },
     {
       "step_number": 2,
       "step_name": "Preparar solicitudes del dia",
       "status": "Finalizado",
       "description": "Prepara el archivo de control y las plantillas base del proceso.",
-      "updated_at": "14:12:54"
+      "updated_at": "14:49:20"
     },
     {
       "step_number": 3,
       "step_name": "Leer y organizar solicitudes",
-      "status": "Finalizado",
+      "status": "Sin comenzar",
       "description": "Obtiene los archivos multipoliza y organiza las carpetas de trabajo.",
-      "updated_at": "14:13:24"
+      "updated_at": "--"
     },
     {
       "step_number": 4,
@@ -76,35 +76,35 @@
       "step_name": "Preparar solicitudes para registro en SII",
       "status": "Finalizado",
       "description": "Lee las solicitudes listas y prepara la informacion que se capturara en SII.",
-      "updated_at": "14:13:28"
+      "updated_at": "14:49:24"
     },
     {
       "step_number": 11,
-      "step_name": "Iniciar sesion y registro de endoso en SII - Poliza 2 de 2 (7043993)",
+      "step_name": "Iniciar sesion y registro de endoso en SII - Poliza 1 de 2 (7043833)",
       "status": "Finalizado",
-      "description": "Poliza 2 de 2 (7043993): Accede a SII e inicia el registro del endoso correspondiente.",
-      "updated_at": "14:16:58"
+      "description": "Poliza 1 de 2 (7043833): Accede a SII e inicia el registro del endoso correspondiente.",
+      "updated_at": "14:50:11"
     },
     {
       "step_number": 12,
-      "step_name": "Consultar poliza base en SII - Poliza 2 de 2 (7043993)",
+      "step_name": "Consultar poliza base en SII - Poliza 1 de 2 (7043833)",
       "status": "Sin comenzar",
-      "description": "Poliza 2 de 2 (7043993): Busca la poliza anterior y valida la informacion de referencia.",
+      "description": "Poliza 1 de 2 (7043833): Busca la poliza anterior y valida la informacion de referencia.",
       "updated_at": "--"
     },
     {
       "step_number": 13,
-      "step_name": "Capturar informacion del endoso - Poliza 2 de 2 (7043993)",
-      "status": "Finalizado",
-      "description": "Poliza 2 de 2 (7043993): Captura datos generales, riesgos y especificaciones del movimiento.",
-      "updated_at": "14:18:33"
+      "step_name": "Capturar informacion del endoso - Poliza 1 de 2 (7043833)",
+      "status": "En proceso",
+      "description": "Poliza 1 de 2 (7043833): Captura datos generales, riesgos y especificaciones del movimiento.",
+      "updated_at": "14:50:11"
     },
     {
       "step_number": 14,
-      "step_name": "Grabar endoso y recuperar nueva poliza - Poliza 2 de 2 (7043993)",
-      "status": "Finalizado",
-      "description": "Poliza 2 de 2 (7043993): Confirma el movimiento y recupera poliza, sufijo y numero de endoso.",
-      "updated_at": "14:18:43"
+      "step_name": "Grabar endoso y recuperar nueva poliza - Poliza 1 de 2 (7043833)",
+      "status": "Sin comenzar",
+      "description": "Poliza 1 de 2 (7043833): Confirma el movimiento y recupera poliza, sufijo y numero de endoso.",
+      "updated_at": "--"
     },
     {
       "step_number": 15,
@@ -116,37 +116,37 @@
     {
       "step_number": 16,
       "step_name": "Iniciar expediente digital GEDI",
-      "status": "Finalizado",
+      "status": "Sin comenzar",
       "description": "Lee las polizas emitidas y abre el flujo de expediente digital.",
-      "updated_at": "14:18:43"
+      "updated_at": "--"
     },
     {
       "step_number": 17,
-      "step_name": "Seleccionar y cargar documentos en GEDI - Poliza 2 de 2 (7043993)",
-      "status": "Finalizado",
-      "description": "Poliza 2 de 2 (7043993): Selecciona condiciones y adjunta los documentos requeridos.",
-      "updated_at": "14:21:39"
+      "step_name": "Seleccionar y cargar documentos en GEDI - Poliza 1 de 2 (7043833)",
+      "status": "Sin comenzar",
+      "description": "Poliza 1 de 2 (7043833): Selecciona condiciones y adjunta los documentos requeridos.",
+      "updated_at": "--"
     },
     {
       "step_number": 18,
-      "step_name": "Generar y finalizar expediente digital - Poliza 2 de 2 (7043993)",
-      "status": "Finalizado",
-      "description": "Poliza 2 de 2 (7043993): Genera el expediente, confirma el resultado y actualiza la solicitud.",
-      "updated_at": "14:21:50"
+      "step_name": "Generar y finalizar expediente digital - Poliza 1 de 2 (7043833)",
+      "status": "Sin comenzar",
+      "description": "Poliza 1 de 2 (7043833): Genera el expediente, confirma el resultado y actualiza la solicitud.",
+      "updated_at": "--"
     },
     {
       "step_number": 19,
       "step_name": "Actualizar y enviar reporte final",
-      "status": "Finalizado",
+      "status": "Sin comenzar",
       "description": "Actualiza estatus, envia el correo de cierre y organiza los mensajes.",
-      "updated_at": "14:21:50"
+      "updated_at": "--"
     },
     {
       "step_number": 20,
       "step_name": "Finalizar proceso de Endosos",
-      "status": "Finalizado",
+      "status": "Sin comenzar",
       "description": "Publica en el panel el cierre correcto o el error final del proceso.",
-      "updated_at": "14:21:50"
+      "updated_at": "--"
     }
   ]
 }

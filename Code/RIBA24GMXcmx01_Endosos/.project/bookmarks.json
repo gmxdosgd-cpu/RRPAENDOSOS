@@ -6,7 +6,7 @@
         "Annotation": null,
         "Id": "e03b45c9-e2bd-4c4b-9a7e-d90d585ea97f",
         "ActivityIdRef": "NApplicationCard_36",
-        "ActivityId": "1.3239",
+        "ActivityId": "1.3267",
         "ActivityName": "Utilizar Aplicación: SIIGMX",
         "IsTransient": false
       },
@@ -15,8 +15,17 @@
         "Annotation": null,
         "Id": "cd5d475b-8594-4850-939a-d053a67ebeed",
         "ActivityIdRef": "Assign_2037",
-        "ActivityId": "1.3120",
+        "ActivityId": "1.3144",
         "ActivityName": "Asignar",
+        "IsTransient": false
+      },
+      {
+        "IsEnabled": true,
+        "Annotation": null,
+        "Id": "75a0f876-11b9-49b5-bb2b-711d1f19ec90",
+        "ActivityIdRef": "If_289",
+        "ActivityId": "1.2370",
+        "ActivityName": "\"SIN MOVIMIENTO DE PRIMA\"",
         "IsTransient": false
       },
       {
